@@ -5,6 +5,7 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "aos": "^2.3.4",
     "babel-loader": "^8.0.6",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -23,7 +24,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    
+      "build": "webpack --config webpack.config.js"
+    
   },
   "repository": {
     "type": "git",

@@ -37,13 +37,13 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="signup-form-container" >
+        <form onSubmit={this.handleSubmit} className="signup-form-box">
           dumblr Sign Up
           <br/>
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
-          <div className="sign-form">
+          <div className="signup-form">
             <br/>
             <label>Email:
               <input type="text"
