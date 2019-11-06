@@ -13,28 +13,32 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
+import Navbar from './navbar/navbar_container';
 
 const App = () => (
-    <div>
+    <div className="MAIN">
       <header className="main-header">
-        <Link to="/" className="header-link">
+        {/* <Link to="/" className="header-link">
           <h1>Dumblr</h1>
         </Link>
-        
+         */}
+        <Navbar />
       </header>
+      <div className="middle">
       <h1>Dumblr DOOO</h1>
-      {/* <Link to= "/signup" >Sign Up</Link> */}
-      <Switch>
-        <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
-        <AuthRoute exact path="/login" component={LogInFormContainer} />
-        <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-        <AuthRoute  path="/" component ={SplashContainer}/>
-       </Switch>
+          {/* <Link to= "/signup" >Sign Up</Link> */}
+          <Switch>
+            <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <AuthRoute  path="/" component ={SplashContainer}/>
+          </Switch>
+       </div>
 
        <footer className="main-footer">
           <h3> bottoms up!</h3>
        </footer>
-
+      
     </div>
 
   );

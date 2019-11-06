@@ -12,9 +12,12 @@ class Dashboard extends React.Component{
     render(){
 
         return(
-            <div>
+            <div className="ContentMain">
 
-                <h1>Content</h1>
+                <h1>LOGGED IN, WOOF WOOF</h1>
+
+                <h2>You gonna make me act a fool.</h2>
+                <h3 className="ContentTest">UP IN HERE UP IN HERE!</h3>
 
             </div>
 

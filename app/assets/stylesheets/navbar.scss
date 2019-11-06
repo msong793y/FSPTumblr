@@ -1,0 +1,25 @@
+.NavBarMain {
+    position: fixed;
+    height:50px;
+    width: 100%;
+    background: blue;
+    display: flex;
+    align-items: stretch;
+    align-items: baseline;
+    flex-direction: row;
+    z-index: 2;
+}
+.LeftNav{
+    flex-basis:auto;
+
+}
+
+.MainIcon {
+
+    width:10%;
+    height:auto;
+}
+
+.SearchBar{
+    left:200px;
+}
