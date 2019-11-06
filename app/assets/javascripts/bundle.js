@@ -200,7 +200,7 @@ var App = function App() {
     className: "main-header"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_8__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "middle"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Dumblr DOOO"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["ProtectedRoute"], {
     path: "/dashboard",
     component: _dashboard_dashboard_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_5__["AuthRoute"], {
@@ -216,7 +216,7 @@ var App = function App() {
     component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "main-footer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, " bottoms up!")));
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -307,68 +307,9 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./frontend/components/navbar/navbar.jsx ***!
   \***********************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Navbar =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Navbar, _React$Component);
-
-  function Navbar(props) {
-    _classCallCheck(this, Navbar);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
-  }
-
-  _createClass(Navbar, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "NavBarMain"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "LeftNav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "MainIcon",
-        to: "/"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "https://img.icons8.com/officel/16/000000/cruise-ship.png"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "SearchBar",
-        type: "text"
-      })));
-    }
-  }]);
-
-  return Navbar;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (Navbar);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/msong/Desktop/FSPTumblr/umblr/frontend/components/navbar/navbar.jsx: Unexpected token (22:12)\n\n\u001b[0m \u001b[90m 20 | \u001b[39m                pathWay\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 | \u001b[39m        \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 | \u001b[39m            \u001b[36mdefault\u001b[39m\u001b[33m:\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 23 | \u001b[39m                buttonDisplay\u001b[33m=\u001b[39m\u001b[32m\"hello\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m        }\u001b[0m\n\u001b[0m \u001b[90m 25 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:6420:17)\n    at Object.unexpected (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:7773:16)\n    at Object.parseExprAtom (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8996:20)\n    at Object.parseExprAtom (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:3618:20)\n    at Object.parseExprSubscripts (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8556:23)\n    at Object.parseMaybeUnary (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8536:21)\n    at Object.parseExprOps (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8402:23)\n    at Object.parseMaybeConditional (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8375:23)\n    at Object.parseMaybeAssign (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8325:21)\n    at Object.parseMaybeAssign (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8362:25)\n    at Object.parseExpression (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:8275:23)\n    at Object.parseStatementContent (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10138:23)\n    at Object.parseStatement (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10009:17)\n    at Object.parseSwitchStatement (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10416:36)\n    at Object.parseStatementContent (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10060:21)\n    at Object.parseStatement (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10009:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10585:25)\n    at Object.parseBlockBody (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10572:10)\n    at Object.parseBlock (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10556:10)\n    at Object.parseFunctionBody (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:9584:24)\n    at Object.parseFunctionBodyAndFinish (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:9554:10)\n    at Object.parseMethod (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:9508:10)\n    at Object.pushClassMethod (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10987:30)\n    at Object.parseClassMemberWithIsStatic (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10912:12)\n    at Object.parseClassMember (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10851:10)\n    at withTopicForbiddingContext (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10806:14)\n    at Object.withTopicForbiddingContext (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:9884:14)\n    at Object.parseClassBody (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10783:10)\n    at Object.parseClass (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10757:22)\n    at Object.parseStatementContent (/Users/msong/Desktop/FSPTumblr/umblr/node_modules/@babel/parser/lib/index.js:10051:21)");
 
 /***/ }),
 
@@ -383,9 +324,11 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar */ "./frontend/components/navbar/navbar.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, null)(_navbar__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, null)(_navbar__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 
@@ -661,19 +604,19 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "signup-form-box"
-      }, "dumblr Sign Up", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Please ", this.props.formType, " or ", this.props.navLink, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "signup-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "SignInLinkButton"
+      }, this.props.navLink), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.email,
         onChange: this.update('email'),
         className: "signup-login"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Password:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
         onChange: this.update('password'),
         className: "signup-login"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Username:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
         onChange: this.update('username'),
@@ -682,7 +625,7 @@ function (_React$Component) {
         className: "session-submit",
         type: "submit",
         value: this.props.formType
-      }))));
+      })));
     }
   }]);
 
@@ -784,7 +727,12 @@ function (_React$Component) {
   _createClass(Splash, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "RightTopButtonContainer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "RTBActual",
+        to: "/login"
+      }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "SplashMainPage"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "MainSplashWords"
@@ -792,13 +740,21 @@ function (_React$Component) {
         className: "SplashTitle"
       }, "Dumblr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "SplashTagLine"
-      }, "Yall gonna make me lose my mind up in here, up in here.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/signup",
+      }, "Yall gonna make me lose my mind up in here, up in here.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "SplashSignUpLink"
-      }, "Get Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/login",
-        className: "SplashloginLink"
-      }, "Login"));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "SplashSignUpLink",
+        to: "/signup"
+      }, "Get Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "SplashLoginLink"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "SplashLoginLink loginlinktext",
+        to: "/login"
+      }, "Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "DemoUser"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, "Demo User"))));
     }
   }]);
 

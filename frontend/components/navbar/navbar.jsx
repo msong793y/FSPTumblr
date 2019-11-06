@@ -9,12 +9,30 @@ class Navbar extends React.Component{
 
 
     render(){
+        const location = this.props.location.pathname;
+
+        let pathWay=''
+        let buttonDisplay='';
+        
+        switch (location) {
+            case "/":
+                buttonDisplay="Demo User";
+                pathWay=
+        
+            default:
+                buttonDisplay="hello";
+        }
+
+
         return(
             <div className="NavBarMain">
                 <div className= "LeftNav">
-                    <Link className="MainIcon" to="/" ><img src="https://img.icons8.com/officel/16/000000/cruise-ship.png"/></Link>
-                    <input className="SearchBar" type= "text" ></input>
-
+                    <div className="MainIcon">
+                        <Link className="logo"  to="/" >D</Link>
+                    </div>
+                    <div className="SearchBar">
+                        <input className="SearchBarText" type= "text" ></input>
+                    </div>
 
 
                 </div>

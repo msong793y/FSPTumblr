@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import Navbar from './navbar';
+import { withRouter} from "react-router-dom"
 
 
 
@@ -9,4 +10,4 @@ import Navbar from './navbar';
 
 
 
-export default connect(null,null)(Navbar)
+export default withRouter(connect(null,null)(Navbar))

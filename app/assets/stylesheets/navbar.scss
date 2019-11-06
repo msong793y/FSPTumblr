@@ -1,25 +1,55 @@
 .NavBarMain {
     position: fixed;
-    height:50px;
+    height:56px;
     width: 100%;
-    background: blue;
+    background-color: rgba(1,19,43, 0.7);
     display: flex;
     align-items: stretch;
     align-items: baseline;
     flex-direction: row;
-    z-index: 2;
+    box-sizing: border-box;
+    
+    border-bottom:5px rgb(241, 240, 236);
+   
 }
+  
 .LeftNav{
     flex-basis:auto;
-
+    display: flex;
+    align-items: stretch;
+    align-items: baseline;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
 }
 
 .MainIcon {
+    width:70px;
+}
 
-    width:10%;
+.MainIcon .logo{
+    margin-left: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
     height:auto;
+    font-family: "Bookman Old Style";
 }
 
 .SearchBar{
-    left:200px;
+    left:300px;
+    width:20%
+    
+}
+
+.SearchBarText{
+    left:20px;
+    width:650%;
+    height:25px;
+    opacity:.5;
+    border-radius: 3px;
+}
+
+.SignInLinkButton{
+    margin-left: 80%;
 }

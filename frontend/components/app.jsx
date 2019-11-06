@@ -25,7 +25,6 @@ const App = () => (
         <Navbar />
       </header>
       <div className="middle">
-      <h1>Dumblr DOOO</h1>
           {/* <Link to= "/signup" >Sign Up</Link> */}
           <Switch>
             <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
@@ -36,7 +35,7 @@ const App = () => (
        </div>
 
        <footer className="main-footer">
-          <h3> bottoms up!</h3>
+     
        </footer>
       
     </div>
