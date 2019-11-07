@@ -9,6 +9,10 @@ class Dashboard extends React.Component{
         super(props)
     }
 
+    componentDidMount(){
+        this.props.setLocation("Dashboard")
+      }
+
     render(){
 
         return(

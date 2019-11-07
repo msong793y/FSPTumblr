@@ -25,9 +25,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --mode=development --watch",
-    
-      "build": "webpack --config webpack.config.js"
-    
+    "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

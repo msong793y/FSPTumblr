@@ -34,6 +34,10 @@ class SessionForm extends React.Component {
     );
   }
 
+  componentDidMount(){
+    this.props.setLocation("SignIn")
+  }
+
   render() {
     
     return (

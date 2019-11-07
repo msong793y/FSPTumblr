@@ -4,10 +4,16 @@ import { withRouter} from "react-router-dom"
 
 
 
+const mapStateToProp = (state)=>({
+    viewing: state.location
+})
 
 
 
 
 
 
-export default withRouter(connect(null,null)(Navbar))
+
+
+
+export default withRouter(connect(mapStateToProp,null)(Navbar))

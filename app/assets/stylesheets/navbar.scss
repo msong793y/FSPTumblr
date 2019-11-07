@@ -14,6 +14,7 @@
 }
   
 .LeftNav{
+    position:fixed;
     flex-basis:auto;
     display: flex;
     align-items: stretch;
@@ -50,6 +51,45 @@
     border-radius: 3px;
 }
 
-.SignInLinkButton{
-    margin-left: 80%;
+
+
+.RightNav{
+    position: fixed;
+    margin-left:72%;
+    flex-basis:auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    align-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.RightNav>*{
+    position: relative;
+    margin-left: 2%;
+    display:flex;
+    width:60px;
+    height:50px;
+    align-content: center;
+    align-items: center;
+    border:1px;
+    border-color: white;
+    border-style: double;
+    border-radius: 5px;
+
+}
+
+.RightNav>*>*{
+    position: relative;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    width:90%;
+    height:100%;
+    border-color: white;
+    border-style: double;
+    border-radius: 5px;
+    
 }

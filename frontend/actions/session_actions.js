@@ -4,7 +4,12 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const CHANGE_LOCATION = "CHANGE_LOCATION";
 
+export const changeLocation = location =>({
+  type: CHANGE_LOCATION,
+  location
+})
 
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
@@ -26,6 +31,8 @@ export const receiveSessionErrors= (errors) => ({
 
 })
 
+export const updateLocation = location =>(dispatch) => (
+  dispatch(changeLocation(location)))
 
 export const signup = user => dispatch => (
   APIUtil.signup(user).then(user => (

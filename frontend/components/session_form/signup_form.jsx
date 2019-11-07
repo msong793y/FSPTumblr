@@ -11,6 +11,8 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+ 
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -33,6 +35,10 @@ class SignupForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  componentDidMount(){
+    this.props.setLocation("SignUp")
   }
 
   render() {
@@ -66,7 +72,7 @@ class SignupForm extends React.Component {
           </label>
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
-            
+
         </form>
       </div>
     );

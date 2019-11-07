@@ -8,12 +8,13 @@ class Splash extends React.Component{
         super(props)
     }
 
+    componentDidMount(){
+        this.props.setLocation("Splash")
+      }
+
     render(){
         return(
             <div>
-                <div className="RightTopButtonContainer">
-                    <Link className="RTBActual" to= "/login" >Demo User</Link>  
-                </div>
                 <div className="SplashMainPage">
                     <div className="MainSplashWords">
                         <h1 className="SplashTitle">Dumblr</h1>

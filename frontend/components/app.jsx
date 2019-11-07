@@ -13,17 +13,14 @@ import LogInFormContainer from './session_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
-import Navbar from './navbar/navbar_container';
+import NavbarContainer from './navbar/navbar_container';
 
 const App = () => (
     <div className="MAIN">
-      <header className="main-header">
-        {/* <Link to="/" className="header-link">
-          <h1>Dumblr</h1>
-        </Link>
-         */}
-        <Navbar />
+       <header className="main-header">
+        <NavbarContainer />
       </header>
+   
       <div className="middle">
           {/* <Link to= "/signup" >Sign Up</Link> */}
           <Switch>
@@ -33,6 +30,7 @@ const App = () => (
             <AuthRoute  path="/" component ={SplashContainer}/>
           </Switch>
        </div>
+      
 
        <footer className="main-footer">
      
