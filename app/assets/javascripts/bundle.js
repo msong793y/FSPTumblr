@@ -383,6 +383,7 @@ function (_React$Component) {
       var location = this.props.location.pathname;
       var pathWay = '';
       var buttonDisplay = '';
+      var bottomBorder = "";
 
       switch (location) {
         case "/":
@@ -391,18 +392,19 @@ function (_React$Component) {
           break;
 
         case "/signup":
-          buttonDisplay = "Sig Up";
+          buttonDisplay = "Login";
           pathWay = "/login";
           break;
 
         case "/login":
-          buttonDisplay = "Sig Up";
+          buttonDisplay = "Sign Up";
           pathWay = "/signup";
           break;
 
         case "/dashboard":
           buttonDisplay = "Get Out";
           pathWay = "/signup";
+          bottomBorder = "MainNavDashboard";
           break;
       }
 
@@ -413,10 +415,10 @@ function (_React$Component) {
 
       if (location === "/login") {
         button1 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://img.icons8.com/pastel-glyph/64/000000/pen.png"
+          src: "/icons8-ball-point-pen-50.png"
         });
         button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "https://img.icons8.com/ios-filled/50/000000/menu.png"
+          src: "https://img.icons8.com/ios/50/000000/menu.png"
         });
         button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "https://img.icons8.com/wired/64/000000/lightning-bolt.png"
@@ -427,7 +429,7 @@ function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "NavBarMain"
+        className: "NavBarMain ".concat(bottomBorder ? "MainNavDashboard" : "")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "LeftNav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

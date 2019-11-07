@@ -9,8 +9,15 @@
     flex-direction: row;
     box-sizing: border-box;
     
-    border-bottom:5px rgb(241, 240, 236);
+
    
+}
+
+.MainNavDashboard{
+    border-bottom: rgba(241, 240, 236, .9);;
+    border-style: solid;;
+    border-bottom-width: 2px;
+  
 }
   
 .LeftNav{
@@ -70,15 +77,37 @@
     position: relative;
     margin-left: 2%;
     display:flex;
-    width:60px;
+    width:65px;
     height:50px;
     align-content: center;
     align-items: center;
     border:1px;
-    border-color: white;
-    border-style: double;
-    border-radius: 5px;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    color:rgba(241, 240, 236, .9);
+  
 
+}
+.TopRightButtonContainer{
+    position: relative;
+    width: 30%;
+    display:flex;
+    border-color: rgba(241, 240, 236, .4);
+    border-style: double;
+    border-radius: 10px;
+    text-align: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;;
+}
+.TRBActual{
+    text-align: center;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .RightNav>*>*{
@@ -88,8 +117,8 @@
     align-items: center;
     width:90%;
     height:100%;
-    border-color: white;
     border-style: double;
-    border-radius: 5px;
-    
+    border-radius: 10px;
+
 }
+

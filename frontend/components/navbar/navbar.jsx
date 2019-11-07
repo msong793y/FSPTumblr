@@ -16,7 +16,7 @@ class Navbar extends React.Component{
 
         let pathWay=''
         let buttonDisplay='';
-       
+        let bottomBorder="";
 
         switch (location) {
            
@@ -27,12 +27,12 @@ class Navbar extends React.Component{
                 break;
            
             case "/signup":
-                buttonDisplay="Sig Up";
+                buttonDisplay="Login";
                 pathWay= "/login";
                 break;
 
             case "/login":
-                buttonDisplay="Sig Up";
+                buttonDisplay="Sign Up";
                 pathWay= "/signup";
                 break;
 
@@ -40,6 +40,7 @@ class Navbar extends React.Component{
             case "/dashboard":
                 buttonDisplay="Get Out";
                 pathWay= "/signup";
+                bottomBorder="MainNavDashboard"
                 break;
 
         
@@ -50,12 +51,13 @@ class Navbar extends React.Component{
         let button4 = '';
         if (location === "/login"){
 
+            
+
                                        
-            button1= <img src="https://img.icons8.com/pastel-glyph/64/000000/pen.png"></img>
+            button1= <img src="/icons8-ball-point-pen-50.png"></img>
                     
-            button2=  <img src="https://img.icons8.com/ios-filled/50/000000/menu.png"></img>
+            button2=  <img src="https://img.icons8.com/ios/50/000000/menu.png"></img>
                      
-                
             button3=  <img src="https://img.icons8.com/wired/64/000000/lightning-bolt.png"></img>
                      
                 
@@ -64,7 +66,7 @@ class Navbar extends React.Component{
        
 
         return(
-            <div className="NavBarMain">
+            <div className= {`NavBarMain ${bottomBorder ? "MainNavDashboard":""}`} >
                 <div className= "LeftNav">
                     <div className="MainIcon">
                         <Link className="logo"  to="/" >D</Link>
@@ -77,22 +79,19 @@ class Navbar extends React.Component{
                     <div className="TopRightButtonContainer">
                         <Link className= "TRBActual" to={pathWay} >{buttonDisplay}</Link>
                     </div>
-              
-                <div className="PostButtonContainer">      
-                    {button1}                         
-                </div>
-                <div className="MenuButtonContainer">
-                    {button2}
-                </div>
-                <div className="LightingButtonContainer">
-                    {button3}
-                </div>
-                <div className="HomeButtonCotainer"> 
-                    {button4}
-                </div>
-
-
-
+                
+                    <div className="PostButtonContainer">      
+                        {button1}                         
+                    </div>
+                    <div className="MenuButtonContainer">
+                        {button2}
+                    </div>
+                    <div className="LightingButtonContainer">
+                        {button3}
+                    </div>
+                    <div className="HomeButtonCotainer"> 
+                        {button4}
+                    </div>
                 </div>
             </div>
         )
