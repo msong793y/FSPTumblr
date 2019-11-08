@@ -22,7 +22,7 @@ class User < ApplicationRecord
     attr_reader :password
 
     has_many :posts,
-        foreign_id: :author_id,
+        foreign_key: :author_id,
         class_name: "Post"
 
     def self.find_by_credentials(email, password)

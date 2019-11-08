@@ -9,7 +9,7 @@ import {
     let newState = Object.assign({}, state)
     switch (action.type) {
       case RECEIVE_SESSION_ERRORS:
-        return action.errors;
+        return action.errors || [];
       case RECEIVE_CURRENT_USER:
         return [];
       case CLEAR_ERRORS:

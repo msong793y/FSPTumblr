@@ -1,32 +1,32 @@
 class Api::PostsController < ApplicationController
-    def index
-        @posts = Post.all
+    # def index
+    #     @posts = Post.all
 
-    end
+    # end
 
 
-    def create
+    # def create
      
 
-    end
+    # end
 
-    def show
+    # def show
     
-    end
+    # end
 
-    def update
+    # def update
 
-    end
+    # end
 
-    def destroy
+    # def destroy
 
-    end
+    # end
 
-    private
+    # private
 
-    def post_params
-        params.require(:post).permit(:author_id,:private,:body,:hastags)
-    end
+    # def post_params
+    #     params.require(:post).permit(:author_id,:private,:body,:hastags)
+    # end
 
 
 end
