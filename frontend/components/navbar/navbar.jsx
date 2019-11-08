@@ -9,7 +9,7 @@ class Navbar extends React.Component{
         super(props)
        
     }
-
+    
 
     render(){
         const location = this.props.location.pathname;

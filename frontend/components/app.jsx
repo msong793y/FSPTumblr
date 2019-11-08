@@ -13,11 +13,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import NavbarContainer from './navbar/navbar_container';
+import Modal from './modal/modal'
 
 
 const App = (props) => (
     <div className="MAIN">
-       <header className="main-header">
+      <Modal />
+      <header className="main-header">
         <NavbarContainer />
       </header>
       <div className="middle">

@@ -1,14 +1,21 @@
 class Api::PostsController < ApplicationController
-    # def index
-    #     @posts = Post.all
-    #     render :index
-    # end
+    def index
+        @posts = Post.all
+        render :index
+    end
 
 
-    # def create
+    def create
+        @post = Post.new(post_params)
+        if @post.save
+            @post.contents.attach(params[:post][:content]) if params[:post][:content]
+            render :show
+        else
+            render json: @user.errors.full_messages, status: 404
+        end
      
 
-    # end
+    end
 
     def show
         @post = Post.find(params[:id])
@@ -24,11 +31,11 @@ class Api::PostsController < ApplicationController
 
     # end
 
-    # private
+    private
 
-    # def post_params
-    #     params.require(:post).permit(:author_id,:private,:body,:hastags)
-    # end
+    def post_params
+        params.require(:post).permit(:author_id,:private,:body,:hastags,:content)
+    end
 
 
 end

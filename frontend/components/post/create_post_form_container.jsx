@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-import Navbar from './navbar';
+import PostForm from './post_form';
 import { withRouter} from "react-router-dom"
-
 
 
 const mapStateToProp = (state)=>({
@@ -16,5 +15,4 @@ const mapStateToProp = (state)=>({
 
 
 
-
-export default withRouter(connect(mapStateToProp,null)(Navbar))
+export default withRouter(connect(mapStateToProp,null)(PostForm))
