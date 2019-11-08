@@ -1,4 +1,4 @@
-class Api::PostsController < ApplicationController
+class PostsController < ApplicationController
     # def index
     #     @posts = Post.all
     #     render :index
@@ -12,7 +12,7 @@ class Api::PostsController < ApplicationController
 
     def show
         @post = Post.find(params[:id])
-        render :show
+        render '/api/posts/show.html.erb'
     
     end
 

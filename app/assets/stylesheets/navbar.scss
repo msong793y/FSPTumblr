@@ -22,7 +22,7 @@
 
 .MainNavDashboard{
     border-bottom: rgba(241, 240, 236, .9);;
-    border-style: solid;;
+    border-style: solid;
     border-bottom-width: 2px;
   
 }
@@ -40,6 +40,9 @@
 
 .MainIcon {
     width:70px;
+    display: flex;
+    align-items: baseline;
+
 }
 
 .MainIcon .logo{
