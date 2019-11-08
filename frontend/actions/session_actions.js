@@ -53,3 +53,7 @@ export const logout = () => dispatch => (
     dispatch(logoutCurrentUser())
   ),error => dispatch(receiveSessionErrors(error.responseJSON)))
 );
+
+export const errorsGone = () => dispatch => (
+  dispatch(clearErrors())
+)

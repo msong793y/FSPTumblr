@@ -9,7 +9,7 @@
     z-index: 2;
     background-color: gray;
     // text-emphasis-color: dark-gray;
-    background: rgba(31, 27, 27, 0.5);
+    background: rgba(31, 27, 27, 0.7);
     font-family: "Bookman Old Style";
     padding: 10px;
     display:flex;
@@ -19,3 +19,43 @@
     align-items: center;
     border-radius: 20px;
 };
+
+.signup-form-box>*{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+
+
+.signup-login{
+
+    
+    height:37px;
+    width: 180%;
+    opacity: .8;
+    border-radius: 7px;
+};
+
+.signupFC{
+    right:40px;
+};
+
+.session-submit{
+    box-shadow: 1px 1px 2px #888888;
+    width: 300px;
+    height:45px;
+    background-color:rgba(0, 170, 180,.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 7px;
+    color:white;
+    font-size: 18px;
+    text-decoration: none;
+    border:none;
+}

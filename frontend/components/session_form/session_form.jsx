@@ -37,34 +37,40 @@ class SessionForm extends React.Component {
   componentDidMount(){
     this.props.setLocation("SignIn")
   }
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
 
   render() {
     
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
+          <div className= "orSignUp">
+          {this.props.navLink}
+          </div>
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
-            <label>Username:
+          
+            <label className="loginInputContainer">
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="login-input"
+                placeholder="Usernname"
               />
             </label>
-            <br/>
-            <label>Password:
+          
+            <label className="loginInputContainer">
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
+                placeholder="Password"
               />
             </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+        
+            <input className="login-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
       </div>

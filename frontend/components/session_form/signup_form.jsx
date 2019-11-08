@@ -4,9 +4,9 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: 'Username',
-      password: 'Password',
-      email:'Email'
+      username: '',
+      password: '',
+      email:''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -37,6 +37,9 @@ class SignupForm extends React.Component {
     );
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
   componentDidMount(){
     this.props.setLocation("SignUp")
   }
@@ -45,29 +48,31 @@ class SignupForm extends React.Component {
     return (
       <div className="signup-form-container" >
         <form onSubmit={this.handleSubmit} className="signup-form-box">
-              {this.renderErrors()}
           <div className="SignInLinkButton">
-                {this.props.navLink}
+          {this.renderErrors()}
           </div>
-          <label>Email:
+          <label className="emailFieldContainer signupFC">
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="signup-login"
+                placeholder="Email"
               />
           </label>
-          <label>Password:
+          <label className="passwordFieldContainer signupFC">
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="signup-login"
+                placeholder="Password"
               />
           </label>
-          <label>Username:
+          <label className="usernameFieldContainer signupFC">
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="signup-login"
+                placeholder="Usernname"
               />
           </label>
             <br/>

@@ -18,13 +18,13 @@ class Splash extends React.Component{
                 <div className="SplashMainPage">
                     <div className="MainSplashWords">
                         <h1 className="SplashTitle">Dumblr</h1>
-                        <h3 className="SplashTagLine">Yall gonna make me lose my mind up in here, up in here.</h3>
+                        <h3 className="SplashTagLine">Dawn + Dusk  //  Cities + Light</h3>
                     </div>
                     <div className="SplashSignUpLink">
                         <Link className="SplashSignUpLink" to= "/signup" >Get Started</Link>
                     </div>
                     <div  className="SplashLoginLink">
-                        <Link className="SplashLoginLink loginlinktext"  to= "/login" >Login</Link>
+                        <Link className="SplashLoginLink loginlinktext"  to= "/login" >Log In</Link>
                     </div>
                     <div className="DemoUser">
                         <Link to='/'>Demo User</Link>

@@ -17,6 +17,7 @@ class Navbar extends React.Component{
         let pathWay=''
         let buttonDisplay='';
         let bottomBorder="";
+       
 
         switch (location) {
            
@@ -45,23 +46,21 @@ class Navbar extends React.Component{
 
         
         }
-        let button1='';
-        let button2='';
-        let button3 = ''; 
+        let button1=<img src="/icons8-github-64.png"></img>;
+        let button2=<img src="/icons8-linkedin-64.png"></img>;
+        let button3 = <img src="/icons8-email-64.png"></img>; 
         let button4 = '';
-        if (location === "/login"){
-
-            
+        if (location === "/dashboard"){
 
                                        
-            button1= <img src="/icons8-ball-point-pen-50.png"></img>
+            button1= <img src="/icons8-compose-64.png"></img>
                     
-            button2=  <img src="https://img.icons8.com/ios/50/000000/menu.png"></img>
+            button2=  <img src="/icons8-sidebar-menu-64.png"></img>
                      
-            button3=  <img src="https://img.icons8.com/wired/64/000000/lightning-bolt.png"></img>
+            button3=  <img src="/icons8-lightning-bolt-80.png"></img>
                      
                 
-            button4 = <img src="https://img.icons8.com/wired/64/000000/top-menu.png"></img>
+            button4 = <img src="/icons8-homework-80.png"></img>
         }
        
 

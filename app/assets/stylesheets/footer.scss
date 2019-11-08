@@ -1,11 +1,11 @@
 .main-footer{
 
-  position: absolute;
+  position: fixed;
   height: 30px;
   bottom: 0px;
   width: 100%;
   border-top-color: 3px solid blue;
-  background-color: rgba(1,19,43, 0.9);
+  background-color: rgba(1,19,43, .99);
   z-index:2;
   text-emphasis-color: white;
 

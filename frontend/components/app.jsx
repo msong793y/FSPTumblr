@@ -1,5 +1,4 @@
 import React from 'react';
-import { Provider } from 'react-redux';
 import {
   Route,
   Redirect,
@@ -15,12 +14,12 @@ import SplashContainer from './splash/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import NavbarContainer from './navbar/navbar_container';
 
-const App = () => (
+
+const App = (props) => (
     <div className="MAIN">
        <header className="main-header">
         <NavbarContainer />
       </header>
-   
       <div className="middle">
           {/* <Link to= "/signup" >Sign Up</Link> */}
           <Switch>

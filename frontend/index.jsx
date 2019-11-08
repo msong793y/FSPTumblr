@@ -14,4 +14,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.updateLocation=updateLocation
 
   ReactDOM.render(<Root store={store}/>, rootEl);
-});
+}); 
