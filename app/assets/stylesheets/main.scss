@@ -1,5 +1,5 @@
   
-.middle{
+.withBackgroundImage{
 
     background:
         /* top, transparent black, faked with gradient */ 
@@ -7,7 +7,7 @@
           rgba(0, 0, 0, 0.7), 
           rgba(0, 0, 0, 0.7)
         );
-    background-image: url("https://images7.alphacoders.com/472/472347.jpg");
+    // background-image: url("https://images7.alphacoders.com/472/472347.jpg");
     height: 100vh;
     width: 100vw;
     background-repeat: no-repeat;
@@ -17,4 +17,10 @@
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
+}
+
+.NoBackgroundImage{
+  background-color: rgba(1,19,43, .99);
+  height: 100vh;
+  width: 100vw;
 }

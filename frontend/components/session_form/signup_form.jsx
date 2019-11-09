@@ -75,9 +75,9 @@ class SignupForm extends React.Component {
                 placeholder="Usernname"
               />
           </label>
-            <br/>
+          
             <input className="session-submit" type="submit" value={this.props.formType} />
-
+         
         </form>
       </div>
     );

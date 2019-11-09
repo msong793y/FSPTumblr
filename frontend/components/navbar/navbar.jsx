@@ -9,6 +9,8 @@ class Navbar extends React.Component{
         super(props)
        
     }
+
+    
     
 
     render(){
@@ -28,7 +30,7 @@ class Navbar extends React.Component{
                 break;
            
             case "/signup":
-                buttonDisplay="Login";
+                buttonDisplay="Log In";
                 pathWay= "/login";
                 break;
 

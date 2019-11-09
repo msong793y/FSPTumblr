@@ -40,9 +40,15 @@
 
 .signupFC{
     right:40px;
+   
 };
+.signupFC>*{
+    text-align: center;
+}
+
 
 .session-submit{
+    position: relative;
     box-shadow: 1px 1px 2px #888888;
     width: 300px;
     height:45px;
@@ -58,4 +64,10 @@
     font-size: 18px;
     text-decoration: none;
     border:none;
+}
+
+.session-submit:hover{
+
+    box-shadow: 10px 10px 10px #888888;
+    bottom:4px;
 }

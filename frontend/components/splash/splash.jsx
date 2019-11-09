@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-class Splash extends React.Component{
+class Splash extends React.Component {
 
     constructor(props){
         super(props)
@@ -20,10 +20,10 @@ class Splash extends React.Component{
                         <h1 className="SplashTitle">Dumblr</h1>
                         <h3 className="SplashTagLine">Dawn + Dusk  //  Cities + Light</h3>
                     </div>
-                    <div className="SplashSignUpLink">
-                        <Link className="SplashSignUpLink" to= "/signup" >Get Started</Link>
+                    <div className="SplashLinkCT">
+                        <Link className="SplashSignUpLink signUPLKTX" to= "/signup" >Get Started</Link>
                     </div>
-                    <div  className="SplashLoginLink">
+                    <div  className="SplashLinkCT">
                         <Link className="SplashLoginLink loginlinktext"  to= "/login" >Log In</Link>
                     </div>
                     <div className="DemoUser">
