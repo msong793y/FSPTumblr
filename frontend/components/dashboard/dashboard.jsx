@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CreatePostFormContainer from '../post/post_form'
+// import CreatePostFormContainer from '../post/post_form'
+import PostBarContainer from "../postbar/postbar_container"
 
 
 class Dashboard extends React.Component{
@@ -17,8 +18,8 @@ class Dashboard extends React.Component{
 
         return(
             <div className="ContentMain">
+                <PostBarContainer />
 
-                <h1>LOGGED IN, WOOF WOOF</h1>
 
 
                 <button onClick={ ()=>this.props.activateModal("createPost")}  >Text Modal</button>

@@ -8,9 +8,7 @@ class Splash extends React.Component {
         super(props)
     }
 
-    componentDidMount(){
-        this.props.setLocation("Splash")
-      }
+    
 
     render(){
         return(
