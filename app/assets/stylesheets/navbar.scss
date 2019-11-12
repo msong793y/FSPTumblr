@@ -2,13 +2,14 @@
     position: fixed;
     height:60px;
     width: 100%;
-    background-color: rgba(1,19,43, 0.7);
+    background-color: rgba(1,19,43, .9);
     display: flex;
     align-items: stretch;
     align-items: baseline;
     flex-direction: row;
     box-sizing: border-box;
     font-family: "Bookman Old Style";
+    z-index: 10;
 
 
    

@@ -2,7 +2,7 @@
 
     position: absolute;
     left:-125%;
-    top: -80%;
+    top: 75px;
     width: 300%;
     // background-color: white;
     display: flex;
@@ -10,9 +10,9 @@
     align-items: baseline;
     flex-direction: row;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: flex-start;
     font-family: "Bookman Old Style";
-    border-radius: 5px;
+    border-radius: 2px;
     align-content: center;
     align-items: center;
 
@@ -22,15 +22,16 @@
     position: relative;
     display:flex;
     background-color: white;
-    width: 85%;
-    height: 110%;
+    left:8%;
+    width: 540px;
+    height: 80px;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-around;
     align-content: center;
     align-items: center;
     color:black;
-    border-radius: 10px;
+    border-radius: 5px;
 
 }
 
@@ -43,6 +44,12 @@
     align-content: center;
     align-items: center;
     color:black;
+}
+.PostBarIcons>*>*{
+    position:relative;
+    height:100%;
+    width:100%;
+
 }
 
 .PostBarIcons>*:hover{

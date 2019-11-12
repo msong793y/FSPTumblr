@@ -15,7 +15,8 @@ class Post < ApplicationRecord
 
     validates :author_id, presence: true
 
-    has_many_attached :content
+
+    has_one_attached :content
 
     belongs_to :user,
         foreign_key: :author_id,

@@ -1,6 +1,7 @@
 .ContentMain{
-    position: fixed;
+    position: relative;
     background-color: #011834;
+    
     top: 30%;
     left: 30%;
     text-align:center;
@@ -8,4 +9,6 @@
     width: 20%;
     z-index: 2;
     text-emphasis-color: white;
+    
+    height: auto;
 }

@@ -8,8 +8,9 @@ class Api::PostsController < ApplicationController
     def create
         @post = Post.new(post_params)
         if @post.save
-            @post.contents.attach(params[:post][:content]) if params[:post][:content]
-            render :show
+            @post.content.attach(params[:post][:content]) if params[:post][:content]
+            @posts = Post.all
+            render :index
         else
             render json: @user.errors.full_messages, status: 404
         end

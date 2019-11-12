@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import PostForm from './post_form';
 import { withRouter} from "react-router-dom"
+import { openModal, closeModal } from '../../actions/modal_actions';
+import {fetchPosts,newPost} from "../../actions/post_actions"
+
 
 
 const mapStateToProp = (state)=>({
@@ -9,10 +12,17 @@ const mapStateToProp = (state)=>({
 })
 
 
+const mapDispatchToProps= (dispatch) =>({
+    fetchPosts: ()=>dispatch(fetchPosts()),
+    newPost: (post)=>dispatch(newPost(post)),
+    activateModal: (action)=> dispatch(openModal(action)),
+    closeModal: () => dispatch(closeModal())
+})
 
 
 
 
 
 
-export default withRouter(connect(mapStateToProp,null)(PostForm))
+
+export default withRouter(connect(mapStateToProp,mapDispatchToProps)(PostForm))

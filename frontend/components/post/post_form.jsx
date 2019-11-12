@@ -12,8 +12,8 @@ export default class Form extends React.Component {
     };
   }
 
-  handleInput(e) {
-    this.setState({title: e.currentTarget.value});
+  handleInput(field) {
+    this.setState({[field]: e.currentTarget.value});
   }
 
   handleFile(e) {
@@ -28,10 +28,17 @@ export default class Form extends React.Component {
     }
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
+    formData.append('post[author_id]', this.state.author_id);
     if (this.state.photoFile) {
 
       formData.append('post[content]', this.state.photoFile);
@@ -42,12 +49,11 @@ export default class Form extends React.Component {
       data: formData,
       contentType: false,
       processData: false
-    }).then(
-      (response) => console.log(response.message),
-      (response) => {
-        console.log(response.responseJSON)
-      }
-    );
+    })
+    .then(this.props.fetchPosts())
+    // .then(this.props.closeModal())
+
+    
   }
 
   render() {
@@ -58,8 +64,8 @@ export default class Form extends React.Component {
         <label htmlFor="post-body">Body of Post</label>
         <input type="text"
           id="post-body"
-          value={this.state.title}
-          onChange={this.handleInput.bind(this)}/>
+          value={this.state.body}
+          onChange={this.update("body")}/>
         <input type="file"
           onChange={this.handleFile.bind(this)}/>
         <h3>Image preview </h3>
