@@ -51,7 +51,7 @@ export default class Form extends React.Component {
       processData: false
     })
     .then(this.props.fetchPosts())
-    // .then(this.props.closeModal())
+    setTimeout(this.props.closeModal(),3000)
 
     
   }
@@ -60,7 +60,7 @@ export default class Form extends React.Component {
     console.log(this.state);
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
+      <form className="PhotoSubmitForm" onSubmit={this.handleSubmit.bind(this)}>
         <label htmlFor="post-body">Body of Post</label>
         <input type="text"
           id="post-body"
@@ -68,9 +68,13 @@ export default class Form extends React.Component {
           onChange={this.update("body")}/>
         <input type="file"
           onChange={this.handleFile.bind(this)}/>
-        <h3>Image preview </h3>
-        {preview}
-        <button>Make a new Post!</button>
+        <h3 className="ImagePreview">Image preview </h3>
+        <div className="ImagePreviewContainer"> 
+            {preview}
+        </div>       
+        <div className= "PhotSubmitFormButtonContainer">
+           <button className= "PhotSubmitFormButton">Submit</button>
+        </div>
       </form>
     );
   }

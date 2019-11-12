@@ -1077,7 +1077,8 @@ function (_React$Component) {
         data: formData,
         contentType: false,
         processData: false
-      }).then(this.props.fetchPosts()); // .then(this.props.closeModal())
+      }).then(this.props.fetchPosts());
+      setTimeout(this.props.closeModal(), 3000);
     }
   }, {
     key: "render",
@@ -1087,6 +1088,7 @@ function (_React$Component) {
         src: this.state.photoUrl
       }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "PhotoSubmitForm",
         onSubmit: this.handleSubmit.bind(this)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "post-body"
@@ -1098,7 +1100,15 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: this.handleFile.bind(this)
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Image preview "), preview, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Make a new Post!"));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "ImagePreview"
+      }, "Image preview "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ImagePreviewContainer"
+      }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "PhotSubmitFormButtonContainer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "PhotSubmitFormButton"
+      }, "Submit")));
     }
   }]);
 

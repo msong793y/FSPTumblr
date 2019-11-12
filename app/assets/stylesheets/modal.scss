@@ -5,6 +5,7 @@
     right: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
+    color:black;
     z-index: 10;
   }
   
@@ -13,4 +14,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 50%;
+    height:50%;
+    background-color: linen;
+    display:flexbox;
+    flex-direction: column;
+    border-radius:15px;
+    justify-content: space-around;
   }

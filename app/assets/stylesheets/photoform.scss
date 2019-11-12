@@ -1,0 +1,34 @@
+.PhotoSubmitForm{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 540px;
+    height: min-content;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+
+.PhotSubmitFormButtonContainer{
+
+    background-color: lightgrey;
+    height: 20px;
+    width: 30px;
+    border: white;
+    border-radius: 2px;
+
+
+}
+.ImagePreviewContainer{
+    align-items: center;
+
+}
+
+.ImagePreviewContainer>*{
+    align-items: center;
+    position: relative;
+    width: 250px;
+    height:auto;
+}
