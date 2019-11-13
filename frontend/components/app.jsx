@@ -14,7 +14,7 @@ import SplashContainer from './splash/splash_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import NavbarContainer from './navbar/navbar_container';
 import Modal from './modal/modal';
-
+import LogoutContainer from './logout';
 
 
 
@@ -62,6 +62,7 @@ class App extends React.Component {
           {/* <Link to= "/signup" >Sign Up</Link> */}
           <Switch>
             <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
+            <ProtectedRoute path  ="/logout" component={LogoutContainer}/>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <AuthRoute  path="/" component ={SplashContainer}/>

@@ -17,7 +17,6 @@ export const fetchAllPosts = () => (
 )
 
 export const createPost = (post) => {
-    debugger
     return(
     $.ajax({
         method: "POST",
@@ -28,3 +27,11 @@ export const createPost = (post) => {
     })
     )}
 
+export const deletePost =(post) =>{
+    return(
+        $.ajax({
+            method:"DELETE",
+            url:`/api/posts/${post.id}`
+        })
+    )
+}

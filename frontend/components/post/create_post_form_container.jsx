@@ -8,7 +8,8 @@ import {fetchPosts,newPost} from "../../actions/post_actions"
 
 const mapStateToProp = (state)=>({
     viewing: state.location,
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    username: Object.values(state.entities.users)[0].username
 })
 
 

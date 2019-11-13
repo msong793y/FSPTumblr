@@ -28,9 +28,16 @@ class Api::PostsController < ApplicationController
 
     # end
 
-    # def destroy
-
-    # end
+    def destroy
+        post = current_user.posts.find_by(id: params[:id])
+        if post
+            post.destroy
+            @posts = Post.all
+            render :index
+        else
+            render json: ["you can't delete chirps that aren't yours"], status: 401
+        end
+    end
 
     private
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { openModal } from '../../actions/modal_actions'
+import {destroyPost} from '../../actions/post_actions'
 /*
 Export a `PostIndexItem` presentational component that takes in a `post` and the 
 `deletePost` action via props. The component should render an `li` containing 
@@ -22,12 +23,18 @@ const PostFeedItem = props => (
          </div>
          <div className="FeedItemContent">
              {props.post.body}
-             <div className="FeedMediaContainer">
-                 <img src={props.post.contentUrl}/>
+             <div className="FeedMediaContainer" onClick={()=>dispatch(openModal("showContent", props.post.contentUrl))}>
+                 <img src={props.post.contentUrl} />
              </div>
          </div>
          <div className= "FeedItemFooterInfo">
+             
             
+            <img src="/icons8-gear-pok-50.png" 
+            className="FeedGearIcon"
+            onClick={()=>dispatch(destroyPost(props.post))}
+            />
+            <br></br>
          </div>
      </div>
 

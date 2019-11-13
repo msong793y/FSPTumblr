@@ -53,13 +53,13 @@
 }
 
 .AuthorshipInfo{
-    // text-align: left;
-    left: 20px;
-    color:black;
-    border-bottom: black;
-    justify-content: left;
-
-    border-bottom-width: 2px;
+    position:relative;
+    top:4px;
+    margin-left: 15px;
+    height:25px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12;
 }
 .FeedItemContent{
     width: 540px;
@@ -98,4 +98,29 @@
     border-radius: 5px;
 
 
+}
+.PostPhotoShowContainer{
+    left:3%;
+    position:fixed;
+    height:120%;
+}
+
+.PostPhotoShow{
+    position: relative;
+    height:90%;
+    width:auto;
+}
+
+
+
+
+.FeedItemFooterInfo{
+    margin-left: 90%;
+    display:flex;
+    flex-direction: column-reverse;
+}
+
+.FeedItemFooterInfo>*{
+    height:50%;
+    width:50%
 }

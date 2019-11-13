@@ -19,6 +19,8 @@ class Navbar extends React.Component{
         let pathWay=''
         let buttonDisplay='';
         let bottomBorder="";
+        let logoutBotton=null;
+       
        
 
         switch (location) {
@@ -41,28 +43,32 @@ class Navbar extends React.Component{
 
 
             case "/dashboard":
-                buttonDisplay="Get Out";
-                pathWay= "/signup";
+                buttonDisplay="";
+                pathWay= "";
+                logoutBotton= 
                 bottomBorder="MainNavDashboard"
                 break;
 
-        
+                
         }
         let button1=<img src="/icons8-github-64.png"></img>;
         let button2=<img src="/icons8-linkedin-64.png"></img>;
         let button3 = <img src="/icons8-email-64.png"></img>; 
         let button4 = '';
+        logoutBotton=<Link className= "TRBActual" to={pathWay}  >{buttonDisplay}</Link>
         if (location === "/dashboard"){
 
                                        
-            button1= <img src="/icons8-compose-64.png"></img>
+            button1= <img src="/icons8-compose-64.png"  onClick={ ()=>this.props.activateModal("postingModal",null)}></img>
                     
             button2=  <img src="/icons8-sidebar-menu-64.png"></img>
                      
             button3=  <img src="/icons8-lightning-bolt-80.png"></img>
-                     
                 
             button4 = <img src="/icons8-homework-80.png"></img>
+
+            logoutBotton= <img src="/icons8-exit-64.png" className="LogoutButton"  onClick={ ()=>this.props.logout()}></img>
+
         }
        
 
@@ -73,12 +79,12 @@ class Navbar extends React.Component{
                         <Link className="logo"  to="/" >D</Link>
                     </div>
                     <div className="SearchBar">
-                        <input className="SearchBarText" type= "text" ></input>
+                        <input className="SearchBarText" type= "text" placeholder="Not Functioning Search"></input>
                     </div>
                 </div>
                 <div className= "RightNav">
                     <div className="TopRightButtonContainer">
-                        <Link className= "TRBActual" to={pathWay} >{buttonDisplay}</Link>
+                        {logoutBotton}
                     </div>
                 
                     <div className="PostButtonContainer">      

@@ -57,25 +57,40 @@ export default class Form extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    // debugger
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
-      <form className="PhotoSubmitForm" onSubmit={this.handleSubmit.bind(this)}>
-        <label htmlFor="post-body">Body of Post</label>
-        <input type="text"
-          id="post-body"
-          value={this.state.body}
-          onChange={this.update("body")}/>
-        <input type="file"
-          onChange={this.handleFile.bind(this)}/>
-        <h3 className="ImagePreview">Image preview </h3>
-        <div className="ImagePreviewContainer"> 
-            {preview}
-        </div>       
-        <div className= "PhotSubmitFormButtonContainer">
-           <button className= "PhotSubmitFormButton">Submit</button>
+      <div className="PhotSubmissionFormContainer">
+        <div>
+            <div className = "PhotoSubmissionFormAvator">
+                <img src="/download.jpg" className="PhotoFormProfilePic"/>
+            </div>
         </div>
-      </form>
+        <div className="PhotoSubmitFormContainer">
+          <form className="PhotoSubmitForm" onSubmit={this.handleSubmit.bind(this)}>
+              <div className= "UserNameDisplayContainer">
+                <div className= "UserNameDisplay">
+                  {this.props.username}
+                </div>
+              </div>
+              <div className="PhotoInputTextContainer">
+                <input className="PhotoInputText" type="text"
+                  id="post-body"
+                  placeholder="Your Text Here"
+                  value={this.state.body}
+                  onChange={this.update("body")}/>
+              </div >  
+              <input type="file" className="PhotoFileUpload"
+                onChange={this.handleFile.bind(this)}/>
+              <div className="ImagePreviewContainer"> 
+                  {preview}
+              </div>       
+              <div className= "PhotSubmitFormButtonContainer">
+                <button className= "PhotSubmitFormButton">Submit</button>
+              </div>
+            </form>
+          </div>
+      </div>
     );
   }
 }

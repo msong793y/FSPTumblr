@@ -19,3 +19,8 @@ export const fetchPosts = ( )=>(dispatch)=>(
 export const newPost = (post) => (dispatch)=>(
     APIUtil.createPost(post).then(posts=> (dispatch(getAllPosts(posts)
     ))))
+
+export const destroyPost=(post)=>(dispatch)=>{
+    return( APIUtil.deletePost(post).then(posts=> (dispatch(getAllPosts(posts)))))
+}
+   

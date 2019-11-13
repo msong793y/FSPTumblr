@@ -1,0 +1,64 @@
+.ModalPostBarIcons{
+    position: absolute;
+    // left:40%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index:11;
+}
+.ModalPostBarIcons>*{
+
+    position: relative;
+    height:100px;
+    width:100px;
+    background:white;
+    border-radius: 50%;
+    // margin: 5%;
+    margin: 0 10px;
+    align-items: center;
+    display:flex;
+    justify-content: space-around;
+
+
+
+}
+.ModalPostBarIcons>*:hover {
+    bottom:5px;
+    background-color: yellow;
+
+}
+
+.ModalPostBarIcons>*>*{
+    height:50px;
+    width: 50px;
+}
+
+.ModalPhotoButtonContainer{
+    background-color: #FC492F;
+}
+
+.ModalQuoteButtonContainer{
+    background-color: #FC8A00;
+}
+
+.ModalLinkButtonContainer{
+    background-color: #21CF36;
+}
+
+.ModalAudioButtonContainer{
+    background-color: #7C5CFF;
+}
+
+.ModalVideoButtonContainer{
+    background-color: #FC62CE;
+}
+
+.ModalAudioButtonContainer:hover{
+    bottom:5px;
+}
+
+.ModalVideoButtonContainer:hover{
+    bottom:5px;
+    background-color: yellow;
+}   

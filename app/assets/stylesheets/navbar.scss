@@ -22,9 +22,9 @@
 }
 
 .MainNavDashboard{
-    border-bottom: rgba(241, 240, 236, .9);;
+    border-bottom: rgba(241, 240, 236, .7);;
     border-style: solid;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
   
 }
   
@@ -67,13 +67,14 @@
     height:25px;
     opacity:.5;
     border-radius: 3px;
+    background:whitesmoke;
 }
 
 
 
 .RightNav{
     position: fixed;
-    margin-left:72%;
+    margin-left:69%;
     flex-basis:auto;
     display: flex;
     justify-content: flex-start;
@@ -86,10 +87,11 @@
 
 .RightNav>*{
     position: relative;
+    margin-top:6px;
     margin-left: 2%;
     display:flex;
-    width:65px;
-    height:50px;
+    width:60px;
+    height:45px;
     align-content: center;
     align-items: center;
     border:1px;
@@ -101,21 +103,10 @@
 
 }
 .TopRightButtonContainer{
-//     position: relative;
+
     width: 30%;
     height: 40px;
-//     display:flex;
-//     border-width: 4px;
-//     border-color: rgba(241, 240, 236, .7);
-//     border-style: solid;
-//     border-radius: 10px;
-//     text-align: center;
-//     justify-items: center;
-//     justify-content: space-evenly;
-//     align-content: center;
-//     align-items: center;;
-//     box-shadow: 1px 1px 2px #888888;
-//     bottom: 3px;
+
     
 }
 
@@ -162,3 +153,70 @@
 
 }
 
+
+
+.LogoutButton{
+    position:relative;
+    width:60%;
+    height: 130%;
+}
+
+.MainNavDashboard>*>.PostButtonContainer{
+    background-color: #20B8FF;
+    border-radius: 5px;
+    border-color: white;
+}
+
+
+// .MainNavDashboard>*>.PostButtonContainer>*{
+// }
+
+.LeftNav>*>*:hover{
+    box-shadow: none;
+}
+
+.logo:hover{
+    
+        background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: rainbow_animation 2s ease-in-out infinite;
+        background-size: 400% 100%;
+    }
+    
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+    
+    50% {
+        background-position: 100% 0;
+        }
+}
+
+.TopRightButtonContainer>*:hover{
+    
+    
+        background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: rainbow_animation 2s ease-in-out infinite;
+        background-size: 400% 100%;
+    
+}
+
+.SplashTitle:hover{
+    background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 2s ease-in-out infinite;
+    background-size: 400% 100%;
+
+}
+
+.PostButtonContainer:hover{
+    bottom:4px;
+}

@@ -1,26 +1,110 @@
+.PhotSubmissionFormContainer{
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+
+
+}
+
+.PhotoSubmissionFormAvator {
+
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+
+}
+
+
+.PhotoSubmissionFormAvator>* {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+
+}
+
+
 .PhotoSubmitForm{
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 540px;
-    height: min-content;
-    justify-content: space-around;
+    width: 500px;
+    margin-left:40px;
+    background:lightgrey;
+    min-height: 200px;
+    height: max-content;
+    justify-content:space-between;
     align-items: center;
+    border-radius:5px;
 
 }
 
-
-
-.PhotSubmitFormButtonContainer{
-
-    background-color: lightgrey;
+.UserNameDisplayContainer{
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:left;
+    border-bottom:1px solid black;
     height: 20px;
-    width: 30px;
-    border: white;
-    border-radius: 2px;
+    width:100%;
+}
+.UserNameDisplay{
+    position:relative;
+    top:4px;
+    margin-left: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:12;
+}
 
+.PhotoFileUpload{
+    background:white;
+}
+// .PhotSubmitFormButtonContainer{
+
+//     background-color: lightgrey;
+//     height: 20px;
+//     width: 30px;
+//     border: white;
+//     border-radius: 2px;
+// }
+
+.PhotSubmitFormButton{
+    position: relative;
+    background-color: #20B8FF;
+    height: 40px;
+    width: 80px;
+    border: white;
+    border-radius: 5px;
+    color:whitesmoke;
+    bottom:4px;
+}
+
+.PhotoInputTextContainer{
+    position: relative;
+    background:white;
+    border: black;
+    width:400px;
+    min-height: 100px;;
+    
 
 }
+.PhotoInputTextContainer>*{
+    position:relative;
+    width:400px;
+    min-height: 100px;;
+    background:white;
+
+}
+
 .ImagePreviewContainer{
     align-items: center;
 
