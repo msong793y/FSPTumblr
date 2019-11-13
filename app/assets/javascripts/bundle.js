@@ -1258,8 +1258,7 @@ function (_React$Component) {
         data: formData,
         contentType: false,
         processData: false
-      }).then(this.props.fetchPosts());
-      setTimeout(this.props.closeModal(), 3000);
+      }).then(this.props.fetchPosts()).then(this.props.closeModal());
     }
   }, {
     key: "render",
