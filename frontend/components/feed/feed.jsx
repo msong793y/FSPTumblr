@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PostFeedItem from './post_feed_item'
+import PostFeedItem from './post_feed_item';
+import PostFeedItemContainer from './post_feed_item_container'
 
 
 
@@ -25,7 +26,7 @@ class PostBar extends React.Component {
             <div className="FeedMain">
 
                 {this.props.posts.map((post=>(
-                    <PostFeedItem post={post} key={post.id} />
+                    <PostFeedItemContainer post={post} key={post.id} />
                 )))}
                     
             </div>
