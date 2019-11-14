@@ -1367,6 +1367,7 @@ function (_React$Component) {
       var formData = new FormData();
       formData.append('post[body]', this.state.body);
       formData.append('post[author_id]', this.state.author_id);
+      formData.append('post[hashtags]', this.state.hashtags);
 
       if (this.state.photoFile) {
         formData.append('post[content]', this.state.photoFile);
@@ -1405,6 +1406,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "UserNameDisplay"
       }, this.props.username)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "ImagePreviewContainer"
+      }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PhotoInputTextContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "PhotoInputText",
@@ -1413,13 +1416,20 @@ function (_React$Component) {
         placeholder: "Your Text Here",
         value: this.state.body,
         onChange: this.update("body")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "PhotoInputHashtagsContainer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "PhotoInputHashtags",
+        type: "text",
+        id: "post-body",
+        placeholder: "hashtags here",
+        value: this.state.hastags,
+        onChange: this.update("hashtags")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         className: "PhotoFileUpload",
         onChange: this.handleFile.bind(this)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ImagePreviewContainer"
-      }, preview), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PhotSubmitFormButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "PhotSubmitFormButton"

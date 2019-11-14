@@ -39,6 +39,7 @@ export default class Form extends React.Component {
     const formData = new FormData();
     formData.append('post[body]', this.state.body);
     formData.append('post[author_id]', this.state.author_id);
+    formData.append('post[hashtags]', this.state.hashtags);
     if (this.state.photoFile) {
 
       formData.append('post[content]', this.state.photoFile);
@@ -74,18 +75,25 @@ export default class Form extends React.Component {
                   {this.props.username}
                 </div>
               </div>
+              <div className="ImagePreviewContainer"> 
+                  {preview}
+              </div> 
               <div className="PhotoInputTextContainer">
                 <input className="PhotoInputText" type="text"
                   id="post-body"
                   placeholder="Your Text Here"
                   value={this.state.body}
                   onChange={this.update("body")}/>
-              </div >  
+              </div >
+              <div className="PhotoInputHashtagsContainer">
+                <input className="PhotoInputHashtags" type="text"
+                  id="post-body"
+                  placeholder="hashtags here"
+                  value={this.state.hastags}
+                  onChange={this.update("hashtags")}/>
+              </div > 
               <input type="file" className="PhotoFileUpload"
-                onChange={this.handleFile.bind(this)}/>
-              <div className="ImagePreviewContainer"> 
-                  {preview}
-              </div>       
+                onChange={this.handleFile.bind(this)}/>        
               <div className= "PhotSubmitFormButtonContainer">
                 <button className= "PhotSubmitFormButton">Submit</button>
               </div>
