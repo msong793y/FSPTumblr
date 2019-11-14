@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
             @posts = Post.all
             render :index
         else
-            render json: ["you can't delete chirps that aren't yours"], status: 401
+            render json: ["you can't delete post that aren't yours"], status: 401
         end
     end
 

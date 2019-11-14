@@ -120,12 +120,13 @@ var closeModal = function closeModal() {
 /*!******************************************!*\
   !*** ./frontend/actions/post_actions.js ***!
   \******************************************/
-/*! exports provided: GET_ALL_POSTS, fetchPosts, newPost, destroyPost */
+/*! exports provided: GET_ALL_POSTS, receiveSessionErrors, fetchPosts, newPost, destroyPost */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALL_POSTS", function() { return GET_ALL_POSTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSessionErrors", function() { return receiveSessionErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newPost", function() { return newPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPost", function() { return destroyPost; });
@@ -140,6 +141,12 @@ var getAllPosts = function getAllPosts(posts) {
   };
 };
 
+var receiveSessionErrors = function receiveSessionErrors(errors) {
+  return {
+    type: RECEIVE_SESSION_ERRORS,
+    errors: errors
+  };
+};
 var fetchPosts = function fetchPosts() {
   return function (dispatch) {
     return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllPosts"]().then(function (posts) {
@@ -960,7 +967,7 @@ function (_React$Component) {
       switch (location) {
         case "/":
           buttonDisplay = "Demo User";
-          pathWay = "/signup";
+          pathWay = "/login";
           break;
 
         case "/signup":
@@ -1749,6 +1756,8 @@ function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
+    _this.demoLogin = _this.demoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1778,6 +1787,64 @@ function (_React$Component) {
       }));
     }
   }, {
+    key: "handleDemo",
+    value: function handleDemo(e) {
+      var _this3 = this;
+
+      var user = "DemoUser";
+      var pass = "password";
+      this.setState({
+        username: "",
+        password: ""
+      }, function () {
+        return _this3.demoLogin(user, pass);
+      });
+    }
+  }, {
+    key: "demoLogin",
+    value: function demoLogin(user, pass) {
+      var _this4 = this;
+
+      user = user.split("");
+      pass = pass.split("");
+
+      var _demoUser = function _demoUser(user) {
+        if (user.length > 0) {
+          var _char = user.shift();
+
+          _this4.setState({
+            username: _this4.state.username + _char
+          }, function () {
+            return setTimeout(function () {
+              _demoUser(user);
+            }, 50);
+          });
+        } else {
+          _demoPass(pass);
+        }
+      };
+
+      var _demoPass = function _demoPass(pass) {
+        if (pass.length > 0) {
+          var _char2 = pass.shift();
+
+          _this4.setState({
+            password: _this4.state.password + _char2
+          }, function () {
+            return setTimeout(function () {
+              _demoPass(pass);
+            }, 50);
+          });
+        } else {
+          var demo_user = Object.assign({}, _this4.state);
+
+          _this4.props.processForm(demo_user);
+        }
+      };
+
+      _demoUser(user);
+    }
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.setLocation("SignIn");
@@ -1792,12 +1859,13 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "DemoUserLogin",
+        onClick: this.handleDemo
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Demo User Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "orSignUp"
-      }, this.props.navLink), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "loginInputContainer"
@@ -2085,7 +2153,7 @@ function (_React$Component) {
       }, "Log In")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "DemoUser"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/"
+        to: "/login"
       }, "Demo User"))));
     }
   }]);

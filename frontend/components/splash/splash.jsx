@@ -25,7 +25,7 @@ class Splash extends React.Component {
                         <Link className="SplashLoginLink loginlinktext"  to= "/login" >Log In</Link>
                     </div>
                     <div className="DemoUser">
-                        <Link to='/'>Demo User</Link>
+                        <Link to='/login'>Demo User</Link>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,10 @@ class SessionForm extends React.Component {
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+
+
   }
 
   update(field) {
@@ -34,6 +38,43 @@ class SessionForm extends React.Component {
     );
   }
 
+  handleDemo(e){
+    
+        let user = "DemoUser";
+        let pass = "password";
+     
+        this.setState({username: "", password: "" },
+                    () => this.demoLogin(user,pass) );
+    }
+
+
+demoLogin(user,pass) {
+    user = user.split("");
+    pass = pass.split("");
+    const _demoUser = (user) => {
+        if (user.length > 0) {
+            let char = user.shift();
+            this.setState({ username: this.state.username + char },
+                () => setTimeout(() => { _demoUser(user) }, 50)
+            )
+        } else {
+            _demoPass(pass);
+        }
+    }
+    const _demoPass = (pass) => {
+        if (pass.length > 0) {
+            let char = pass.shift();
+            this.setState({ password: this.state.password + char },
+                () => setTimeout(() => { _demoPass(pass) }, 50)
+            )
+        } else {
+            const demo_user = Object.assign({}, this.state);
+            this.props.processForm(demo_user);
+        }
+    }
+    _demoUser(user);
+};
+
   componentDidMount(){
     this.props.setLocation("SignIn")
   }
@@ -45,10 +86,10 @@ class SessionForm extends React.Component {
     
     return (
       <div className="login-form-container">
+        <div className= "DemoUserLogin" onClick={this.handleDemo}>
+            <button>Demo User Login</button>
+        </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <div className= "orSignUp">
-          {this.props.navLink}
-          </div>
           {this.renderErrors()}
           <div className="login-form">
           

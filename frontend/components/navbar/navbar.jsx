@@ -28,7 +28,7 @@ class Navbar extends React.Component{
 
             case "/":
                 buttonDisplay="Demo User";
-                pathWay= "/signup";
+                pathWay= "/login";
                 break;
            
             case "/signup":
