@@ -3,8 +3,6 @@
     position: absolute;
     left:-125%;
     top: 180px;
-    // align-items: flex-start;
-    // overflow-y: scroll;
     height:auto;
     width: 300%;
     display: flex;
@@ -14,22 +12,11 @@
 .PostFeedItemContainer {
 
     position: relative;
-    // left:-125%;
-    // top: 80%;
-    // width: 300%;
-    // overflow-y: scroll;
-
-    // background: white;
-    // height: 100px;
-    // background-color: white;
     display: flex;
-    // // align-items: stretch;
-    // align-items: flex-start;
     flex-direction: row;
-    // box-sizing: border-box;
     justify-content:flex-start;
     font-family: "Bookman Old Style";
-    border-radius: 5px;
+    border-radius: 3px;
     align-content: center;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -54,13 +41,18 @@
 
 .AuthorshipInfo{
     position:relative;
-    top:4px;
-    margin-left: 15px;
-    height:25px;
+    top:2px;
+    margin-left: 20px;
+    height:44px;
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:12;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    font-size: 14px;
+
 }
+
 .FeedItemContent{
     width: 540px;
     height: auto;
@@ -100,14 +92,15 @@
 
 }
 .PostPhotoShowContainer{
-    left:3%;
+    left:2%;
     position:fixed;
-    height:120%;
+    height:100%;
 }
 
 .PostPhotoShow{
     position: relative;
-    height:90%;
+    bottom:5%;
+    height:130%;
     width:auto;
 }
 
@@ -115,12 +108,15 @@
 
 
 .FeedItemFooterInfo{
+    margin-top:7px;
+    margin-bottom:7px;
     margin-left: 90%;
     display:flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
 }
 
 .FeedItemFooterInfo>*{
+    margin-right: 14px;
     height:50%;
     width:50%
 }

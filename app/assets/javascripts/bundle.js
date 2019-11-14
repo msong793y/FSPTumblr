@@ -722,18 +722,40 @@ function (_React$Component) {
         className: "AuthorshipInfo"
       }, this.props.post.user.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemContent"
-      }, this.props.post.body, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedMediaContainer",
         onClick: function onClick() {
           return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])("showContent", _this.props.post.contentUrl));
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: this.props.post.contentUrl
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "FeedContentBody"
+      }, this.props.post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "FeedContentHashtags"
+      }, this.props.post.hastags)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemFooterInfo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/icons8-gear-pok-50.png",
+        src: "/icons8-gear-100.png",
         className: "FeedGearIcon",
+        onClick: function onClick() {
+          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/icons8-heart-80.png",
+        className: "FeedLikeIcon",
+        onClick: function onClick() {
+          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/icons8-repeat-80.png",
+        className: "FeedReblogIcon",
+        onClick: function onClick() {
+          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/icons8-topic-80.png",
+        className: "FeedCommentIcon",
         onClick: function onClick() {
           return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
         }
@@ -1014,15 +1036,21 @@ function (_React$Component) {
   _inherits(Navbar, _React$Component);
 
   function Navbar(props) {
+    var _this;
+
     _classCallCheck(this, Navbar);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Navbar).call(this, props));
+    _this.state = {
+      menuDrop: "DropDownMenuItemsHidden"
+    };
+    return _this;
   }
 
   _createClass(Navbar, [{
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       var location = this.props.location.pathname;
       var pathWay = '';
@@ -1067,12 +1095,17 @@ function (_React$Component) {
         className: "TRBActual",
         to: pathWay
       }, buttonDisplay);
+      var dropDownMenu = null; //DropDown Menu Stuff
+      // let menuClass="";
+      // function makeMenuVisible(){menuClass= "DropDownMenuItemsVisible",
+      //                      console.log(menuClass)}
+      // debugger;
 
       if (location === "/dashboard") {
         button1 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: "/icons8-compose-64.png",
           onClick: function onClick() {
-            return _this.props.activateModal("postingModal", null);
+            return _this2.props.activateModal("postingModal", null);
           }
         });
         button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1088,13 +1121,22 @@ function (_React$Component) {
           src: "/icons8-exit-64.png",
           className: "LogoutButton",
           onClick: function onClick() {
-            return _this.props.logout();
+            return _this2.props.logout();
           }
         });
+        dropDownMenu = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "".concat(this.state.menuDrop === "" ? "DropDownMenuItemsVisible" : "DropDownMenuItemsHidden")
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Edit Profile Picture"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Likes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Posts"));
       }
 
+      console.log(this.state.menuDrop);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "NavBarMain ".concat(bottomBorder ? "MainNavDashboard" : "")
+        className: "NavBarMain ".concat(bottomBorder ? "MainNavDashboard" : ""),
+        onMouseLeave: function onMouseLeave() {
+          return _this2.setState({
+            menuDrop: "menuGone"
+          });
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "LeftNav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1115,8 +1157,13 @@ function (_React$Component) {
       }, logoutBotton), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PostButtonContainer"
       }, button1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "MenuButtonContainer"
-      }, button2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "MenuButtonContainer",
+        onMouseEnter: function onMouseEnter() {
+          return _this2.setState({
+            menuDrop: ""
+          });
+        }
+      }, button2, dropDownMenu), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "LightingButtonContainer"
       }, button3), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "HomeButtonCotainer"

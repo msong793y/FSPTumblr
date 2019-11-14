@@ -220,3 +220,35 @@
 .PostButtonContainer:hover{
     bottom:4px;
 }
+
+.MenuButtonContainer{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.MenuButtonContainer>*{
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+}
+.MenuButtonContainer>*>*{
+    background-color: dodgerblue;
+    padding: 20px;
+    position: relative;
+    width:150px;
+    top: 120%;
+    border-style: solid;
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: whitesmoke;
+}
+
+.DropDownMenuItemsVisible{
+    visibility: visible;
+}
+.DropDownMenuItemsHidden{
+    visibility: hidden;
+}
+

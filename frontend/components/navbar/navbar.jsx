@@ -7,6 +7,8 @@ class Navbar extends React.Component{
 
     constructor(props){
         super(props)
+        this.state = {  
+            menuDrop:"DropDownMenuItemsHidden"}
        
     }
 
@@ -21,7 +23,11 @@ class Navbar extends React.Component{
         let bottomBorder="";
         let logoutBotton=null;
        
-       
+
+            
+        
+
+
 
         switch (location) {
            
@@ -56,6 +62,16 @@ class Navbar extends React.Component{
         let button3 = <img src="/icons8-email-64.png"></img>; 
         let button4 = '';
         logoutBotton=<Link className= "TRBActual" to={pathWay}  >{buttonDisplay}</Link>
+
+        let dropDownMenu = null;
+        //DropDown Menu Stuff
+        // let menuClass="";
+
+        // function makeMenuVisible(){menuClass= "DropDownMenuItemsVisible",
+        //                      console.log(menuClass)}
+
+        // debugger;
+       
         if (location === "/dashboard"){
 
                                        
@@ -69,11 +85,16 @@ class Navbar extends React.Component{
 
             logoutBotton= <img src="/icons8-exit-64.png" className="LogoutButton"  onClick={ ()=>this.props.logout()}></img>
 
+            dropDownMenu= <ul className={`${this.state.menuDrop ===""? "DropDownMenuItemsVisible":"DropDownMenuItemsHidden" }`}>
+                            <li>Edit Profile Picture</li>
+                            <li>Likes</li>
+                            <li>Posts</li>
+                         </ul>
         }
        
-
+        console.log(this.state.menuDrop)
         return(
-            <div className= {`NavBarMain ${bottomBorder ? "MainNavDashboard":""}`} >
+            <div className= {`NavBarMain ${bottomBorder ? "MainNavDashboard":""}`}  onMouseLeave={()=>this.setState({menuDrop: "menuGone"})} >
                 <div className= "LeftNav">
                     <div className="MainIcon">
                         <Link className="logo"  to="/" >D</Link>
@@ -90,8 +111,11 @@ class Navbar extends React.Component{
                     <div className="PostButtonContainer">      
                         {button1}                         
                     </div>
-                    <div className="MenuButtonContainer">
-                        {button2}
+                    <div className={`MenuButtonContainer`}  
+                    onMouseEnter={()=>this.setState({menuDrop: ""})} 
+                    >
+                          {button2}
+                          {dropDownMenu}
                     </div>
                     <div className="LightingButtonContainer">
                         {button3}
