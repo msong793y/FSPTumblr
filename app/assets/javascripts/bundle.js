@@ -1630,6 +1630,8 @@ function (_React$Component) {
         processData: false
       }).then(this.props.fetchPosts()).then(this.props.closeModal());
       setTimeout(this.props.fetchPosts, 1000);
+      setTimeout(this.props.fetchPosts, 3000);
+      setTimeout(this.props.fetchPosts, 5000);
     }
   }, {
     key: "render",
