@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = Post.all
+        @posts = Post.all.includes(:comments, :author)
         render :index
     end
 
@@ -9,7 +9,7 @@ class Api::PostsController < ApplicationController
         @post = Post.new(post_params)
         if @post.save
             @post.content.attach(params[:post][:content]) if params[:post][:content]
-            @posts = Post.all
+            @posts = Post.all.includes(:comments, :author)
             render :index
         else
             render json: @user.errors.full_messages, status: 404
@@ -32,7 +32,7 @@ class Api::PostsController < ApplicationController
         post = current_user.posts.find_by(id: params[:id])
         if post
             post.destroy
-            @posts = Post.includes(:comments).all
+            @posts = Post.all.includes(:comments,:author)
             render :index
         else
             render json: ["you can't delete post that aren't yours"], status: 401

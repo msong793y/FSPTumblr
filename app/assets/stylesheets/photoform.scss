@@ -7,8 +7,8 @@
     align-items: flex-start;
     bottom: 25%;
     max-height:100vh;
-    height:70vh;
-    width: 50vw;
+    height:450px;
+    width: 650px;
     max-width: 55vw;
     background-color: gray;
     background: rgba(31, 27, 27, 0.7);
@@ -146,9 +146,10 @@
 }
 
 .ImagePreviewContainer{
+    position:relative;
     align-items: center;
-    max-width: 300px;
-    height:auto;
+    max-height: 20%;
+    width:auto;
 
 }
 

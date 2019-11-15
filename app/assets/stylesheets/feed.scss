@@ -74,7 +74,7 @@
 
 .FeedItemAvator {
 
-    position: relative;
+    position: sticky;
     width: 64px;
     height: 64px;
     border-radius: 5px;
@@ -85,10 +85,9 @@
 .FeedItemAvator>* {
 
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 64px;
+    height: 64px;
     border-radius: 5px;
-
 
 }
 .PostPhotoShowContainer{
