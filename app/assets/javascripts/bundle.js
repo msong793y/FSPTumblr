@@ -733,7 +733,7 @@ function (_React$Component) {
         className: "FeedContentBody"
       }, this.props.post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedContentHashtags"
-      }, this.props.post.hastags)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.post.hashtags)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemFooterInfo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-gear-100.png",
@@ -1320,7 +1320,7 @@ function (_React$Component) {
     _this.state = {
       author_id: _this.props.currentUser,
       body: "",
-      hastag: "",
+      hashtag: "",
       photoFile: null,
       photoUrl: null
     };
@@ -1423,7 +1423,7 @@ function (_React$Component) {
         type: "text",
         id: "post-body",
         placeholder: "hashtags here",
-        value: this.state.hastags,
+        value: this.state.hashtags,
         onChange: this.update("hashtags")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",

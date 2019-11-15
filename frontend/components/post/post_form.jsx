@@ -6,7 +6,7 @@ export default class Form extends React.Component {
     this.state = {  
       author_id: this.props.currentUser,
       body: "",
-      hastag: "",
+      hashtag: "",
       photoFile: null,
       photoUrl: null
     };
@@ -89,7 +89,7 @@ export default class Form extends React.Component {
                 <input className="PhotoInputHashtags" type="text"
                   id="post-body"
                   placeholder="hashtags here"
-                  value={this.state.hastags}
+                  value={this.state.hashtags}
                   onChange={this.update("hashtags")}/>
               </div > 
               <input type="file" className="PhotoFileUpload"

@@ -11,9 +11,7 @@ class PostFeedItem extends React.Component{
     }
 
 
-
     render(){
-
     return(
             <div className= "PostFeedItemContainer">
                 <div className = "FeedItemAvator">
@@ -32,7 +30,7 @@ class PostFeedItem extends React.Component{
                              {this.props.post.body}
                         </div>
                         <div className="FeedContentHashtags">
-                             {this.props.post.hastags}
+                             {this.props.post.hashtags}
                         </div>
                   
                     </div>
