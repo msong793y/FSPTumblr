@@ -1,4 +1,15 @@
 # == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  author_id  :integer          not null
+#  body       :text
+#  hashtags   :string
+#  private    :boolean          default("false"), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 
 # Table name: posts
 
@@ -18,7 +29,12 @@ class Post < ApplicationRecord
 
     has_one_attached :content
 
-    belongs_to :user,
+    has_many :comments,
+        foreign_key: :post_id,
+        class_name: "Comment"
+
+
+    belongs_to :author,
         foreign_key: :author_id,
         class_name: "User"
 end

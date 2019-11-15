@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions'
 import {destroyPost} from '../../actions/post_actions'
+import CommentShow from './comment_show'
 
 
 class PostFeedItem extends React.Component{
@@ -11,15 +12,16 @@ class PostFeedItem extends React.Component{
     }
 
 
+
     render(){
     return(
             <div className= "PostFeedItemContainer">
                 <div className = "FeedItemAvator">
-                    <img src="/download.jpg" className="FeedProfilePic"/>
+                    <img src="/default_profile_pic.png" className="FeedProfilePic"/>
                 </div>
                 <div className = "FeedItemBox">
                     <div className= "AuthorshipInfo">
-                        {this.props.post.user.username}
+                        {this.props.post.author.username}
                     </div>
                     <div className="FeedItemContent">
 
@@ -32,7 +34,9 @@ class PostFeedItem extends React.Component{
                         <div className="FeedContentHashtags">
                              {this.props.post.hashtags}
                         </div>
-                  
+                        <div className = "FeedContentCommentContainer">
+                            {this.props.post.postComments.map(comment=>(<CommentShow comment={comment} key={comment.id} />))}
+                        </div>
                     </div>
                     <div className= "FeedItemFooterInfo">
                         <img src="/icons8-gear-100.png" 
@@ -49,7 +53,7 @@ class PostFeedItem extends React.Component{
                         />
                         <img src="/icons8-topic-80.png" 
                         className="FeedCommentIcon"
-                        onClick={()=>dispatch(destroyPost(this.props.post))}
+                        onClick={()=>dispatch(openModal("postComment", this.props.post.id))}
                         />
                         <br></br>
                     </div>

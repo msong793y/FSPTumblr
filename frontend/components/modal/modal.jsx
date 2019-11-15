@@ -2,8 +2,9 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePostContainer from '../post/create_post_form_container'
-import PostingModalContainer from '../postingModal/postingModal_container'
-import ShowContent from '../feed/show_content'
+import PostingModalContainer from '../postingModal/postingModal_container';
+import ShowContent from '../feed/show_content';
+import CommentPostContainer from "../comment/comment_post_container";
 // import LoginFormContainer from '../session_form/login_form_container';
 // import SignupFormContainer from '../session_form/signup_form_container';
 
@@ -23,6 +24,9 @@ function Modal({modal, content, closeModal}) {
       break;
     case 'showContent':
       component= <ShowContent content={content} />
+      break;
+    case 'postComment':
+      component = <CommentPostContainer content={content}/>
       break;
     // case 'signup':
     //   component = <SignupFormContainer />;

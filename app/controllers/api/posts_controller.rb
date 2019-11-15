@@ -32,7 +32,7 @@ class Api::PostsController < ApplicationController
         post = current_user.posts.find_by(id: params[:id])
         if post
             post.destroy
-            @posts = Post.all
+            @posts = Post.includes(:comments).all
             render :index
         else
             render json: ["you can't delete post that aren't yours"], status: 401

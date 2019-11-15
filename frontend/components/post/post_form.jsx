@@ -6,7 +6,7 @@ export default class Form extends React.Component {
     this.state = {  
       author_id: this.props.currentUser,
       body: "",
-      hashtag: "",
+      hashtag: {},
       photoFile: null,
       photoUrl: null
     };
@@ -65,7 +65,7 @@ export default class Form extends React.Component {
       <div className="PhotSubmissionFormContainer">
         <div>
             <div className = "PhotoSubmissionFormAvator">
-                <img src="/download.jpg" className="PhotoFormProfilePic"/>
+                <img src="/default_profile_pic.png" className="PhotoFormProfilePic"/>
             </div>
         </div>
         <div className="PhotoSubmitFormContainer">
@@ -75,9 +75,7 @@ export default class Form extends React.Component {
                   {this.props.username}
                 </div>
               </div>
-              <div className="ImagePreviewContainer"> 
-                  {preview}
-              </div> 
+             
               <div className="PhotoInputTextContainer">
                 <input className="PhotoInputText" type="text"
                   id="post-body"
@@ -92,11 +90,15 @@ export default class Form extends React.Component {
                   value={this.state.hashtags}
                   onChange={this.update("hashtags")}/>
               </div > 
+              <div className="ImagePreviewContainer"> 
+                  {preview}
+              </div> 
               <input type="file" className="PhotoFileUpload"
                 onChange={this.handleFile.bind(this)}/>        
               <div className= "PhotSubmitFormButtonContainer">
                 <button className= "PhotSubmitFormButton">Submit</button>
               </div>
+              
             </form>
           </div>
       </div>

@@ -16,7 +16,7 @@ class PostBar extends React.Component {
             <div>
                 <div className="PostBarMain">
                     <div className = "PostBarProfilePic">
-                        <img src="/download.jpg" className= "TextButton"></img>
+                        <img src="/default_profile_pic.png" className= "TextButton"></img>
                     </div>
                     <div className="PostBarIcons">
                         <div className="TextButtonContainer">

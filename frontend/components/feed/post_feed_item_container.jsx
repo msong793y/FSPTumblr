@@ -5,7 +5,7 @@ import {fetchPosts} from "../../actions/post_actions"
 
 
 const mapStateToProp = (state)=>({
-    posts: Object.values(state.entities.posts).reverse()
+    // posts: Object.values(state.entities.posts).reverse()
 })
 
 

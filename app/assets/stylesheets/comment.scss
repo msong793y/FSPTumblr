@@ -1,0 +1,147 @@
+.FeedContentCommentContainer{
+    display:flex;
+    flex-direction: column;
+}
+
+.CommentShow{
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin-bottom: 1px;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: grey;
+    text-align: left;
+    
+}
+
+.CommentAuthor{
+    position: relative;
+    color:black;
+    flex-grow: 1;
+}
+
+.CommentBody{
+    text-align: right;
+    margin-top:3px;
+    color:black;
+    flex-grow: 3;
+}
+
+
+
+
+
+
+
+
+
+//comment input box
+
+.Comment-form-container{
+    position: fixed;
+    text-align:center;
+    height:50vh;
+    width: 60vw;
+    z-index: 2;
+    background-color: gray;
+    background: rgba(31, 27, 27, 0.7);
+    font-family: "Bookman Old Style";
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+    
+};
+.CommentFormTitle>*{
+    background-color: blanchedalmond;
+    height: 15%;
+    width:15%;
+    border-radius:5px;
+
+}
+.CommentFormTitle>*{
+    background-color: blanchedalmond;
+    height: 100%;
+    width:100%;
+
+}
+
+.login-form {
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin:15px
+    
+
+
+}
+.login-form>*{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+
+}
+
+.comment-input{
+    margin:10px;
+    height:30vh;
+    width: 300%;
+    opacity: .8;
+    border-radius: 7px;
+    text-align: left top;
+    background-color:whitesmoke;
+
+
+};
+
+
+
+
+
+.login-submit{
+    position:relative;
+    box-shadow: 1px 1px 2px #888888;
+    width: 300px;
+    height:45px;
+    background-color:rgba(0, 170, 180,.9);
+    margin-top:5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    opacity: 1;
+    border-radius: 7px;
+    color:white;
+    font-size: 18px;
+    text-decoration: none;
+    border:none;
+}
+
+.login-submit:hover{
+
+    box-shadow: 5px 5px 5px #888888;
+    bottom:2px;
+}
+
+.orSignUp>*{
+    text-decoration: none;
+};
+
+.DemoUserLogin>*{
+    position: relative;;
+    background-color:#20B8FF;
+    color:whitesmoke;
+    border-radius: 4px;
+}

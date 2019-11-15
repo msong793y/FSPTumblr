@@ -30,3 +30,7 @@ export const destroyPost=(post)=>(dispatch)=>{
     return( APIUtil.deletePost(post).then(posts=> (dispatch(getAllPosts(posts)))))
 }
    
+
+export const createComment = (comment)=>()=>{
+    return ( APIUtil.createComment(comment))
+}
