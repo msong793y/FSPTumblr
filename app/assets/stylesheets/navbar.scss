@@ -153,6 +153,23 @@
     border-radius: 10px;
 
 }
+.RightNav>*>*>*{
+    position: relative;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    width:90%;
+    height:100%;
+    border-style: double;
+    border-radius: 10px;
+
+}
+
+.MenuButtonContainer>*>*{
+    position: relative;
+    width: 100%;
+    height:100%;
+}
 
 
 
@@ -234,17 +251,17 @@
     display:flex;
     flex-direction: column;
 }
-.MenuButtonContainer>*>*{
-    background-color: dodgerblue;
-    padding: 20px;
-    position: relative;
-    width:150px;
-    top: 120%;
-    border-style: solid;
-    border-radius: 3px;
-    border-width: 1px;
-    border-color: whitesmoke;
-}
+// .MenuButtonContainer>*>*{
+//     background-color: dodgerblue;
+//     padding: 20px;
+//     position: relative;
+//     width:150px;
+//     top: 120%;
+//     border-style: solid;
+//     border-radius: 3px;
+//     border-width: 1px;
+//     border-color: whitesmoke;
+// }
 
 .DropDownMenuItemsVisible{
     visibility: visible;
@@ -253,3 +270,10 @@
     visibility: hidden;
 }
 
+
+.LinkedINButtonImg{
+    background-color: none;
+    padding:0px;
+    width: relative;
+    top:0px;
+}

@@ -57,8 +57,8 @@ class Navbar extends React.Component{
 
                 
         }
-        let button1=<img src="/icons8-github-64.png"></img>;
-        let button2=<img src="/icons8-linkedin-64.png"></img>;
+        let button1 = <a href="https://github.com/msong793y"><img  src="/icons8-github-64.png"></img></a>;
+        let button2 = <a href="https://www.linkedin.com/in/miles-song/"><img className="LinkedINButtonImg" src="/icons8-linkedin-64.png"></img></a>;
         let button3 = <img src="/icons8-email-64.png"></img>; 
         let button4 = '';
         logoutBotton=<Link className= "TRBActual" to={pathWay}  >{buttonDisplay}</Link>
