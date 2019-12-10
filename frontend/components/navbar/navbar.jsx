@@ -77,18 +77,18 @@ class Navbar extends React.Component{
                                        
             button1= <img src="/icons8-compose-64.png"  onClick={ ()=>this.props.activateModal("postingModal",null)}></img>
                     
-            button2=  <img src="/icons8-sidebar-menu-64.png"></img>
+            button2 = <a href="https://www.linkedin.com/in/miles-song/"><img className="LinkedINButtonImg" src="/icons8-linkedin-64.png"></img></a>
                      
-            button3=  <img src="/icons8-lightning-bolt-80.png"></img>
+            button3 = <a href="https://github.com/msong793y"><img src="/icons8-github-64.png"></img></a>;
                 
             button4 = <img src="/icons8-homework-80.png"></img>
 
             logoutBotton= <img src="/icons8-exit-64.png" className="LogoutButton"  onClick={ ()=>this.props.logout()}></img>
 
             dropDownMenu= <ul className={`${this.state.menuDrop ===""? "DropDownMenuItemsVisible":"DropDownMenuItemsHidden" }`}>
-                            <li>Edit Profile Picture</li>
+                            {/* <li>Edit Profile Picture</li>
                             <li>Likes</li>
-                            <li>Posts</li>
+                            <li>Posts</li> */}
                          </ul>
         }
        

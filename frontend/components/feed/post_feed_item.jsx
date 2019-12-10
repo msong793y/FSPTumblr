@@ -32,7 +32,7 @@ class PostFeedItem extends React.Component{
                              {this.props.post.body}
                         </div>
                         <div className="FeedContentHashtags">
-                             {this.props.post.hashtags}
+                            
                         </div>
                         <div className = "FeedContentCommentContainer">
                             {this.props.post.postComments.map(comment=>(<CommentShow comment={comment} key={comment.id} />))}

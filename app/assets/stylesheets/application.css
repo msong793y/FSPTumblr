@@ -40,7 +40,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 /* make sure to set some focus styles for accessibility */
@@ -149,7 +149,7 @@ html {
  */
 
 a:focus {
-    outline: thin dotted;
+    
 }
 
 /**
@@ -159,6 +159,7 @@ a:focus {
 a:active,
 a:hover {
     outline: 0;
+
 }
 
 /**
@@ -388,6 +389,8 @@ textarea {
 
 *{
     color:white;
+    outline:none;
+
     /* background-color: rgba(1,19,43, .99); */
 
 }
