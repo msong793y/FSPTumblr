@@ -47,3 +47,25 @@ export const createComment =( comment) =>{
         })
     )
 }
+
+
+export const createLike = (likeObj) => {
+    return (
+        $.ajax({
+            method: "POST",
+            url: "/api/likes",
+            data: { likeObj },
+        })
+    )
+}
+
+
+export const deleteLike = (likeObj) => {
+    return (
+        $.ajax({
+            method: "DELETE",
+            url: `/api/likes/1`,
+            data: { likeObj}
+        })
+    )
+}

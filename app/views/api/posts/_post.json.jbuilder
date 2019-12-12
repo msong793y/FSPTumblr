@@ -10,6 +10,13 @@ json.postComments do
     end
 end
 
+json.postLikers do
+    json.array! post.likers do |liker|
+        json.partial! "api/users/user", user: liker
+    end
+end
+
+
 # json.comments post.comments
 
 # json.content do

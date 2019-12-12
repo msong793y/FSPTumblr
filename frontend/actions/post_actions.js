@@ -34,3 +34,11 @@ export const destroyPost=(post)=>(dispatch)=>{
 export const createComment = (comment)=>()=>{
     return ( APIUtil.createComment(comment))
 }
+
+export const createLike = (like) => (dispatch) => {
+    return (APIUtil.createLike(like).then(posts => (dispatch(getAllPosts(posts)))))
+}
+
+export const deleteLike = (likeObj)=>(dispatch) => {
+    return (APIUtil.deleteLike(likeObj).then(posts => (dispatch(getAllPosts(posts)))))
+}

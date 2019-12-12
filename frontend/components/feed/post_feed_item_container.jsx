@@ -5,6 +5,7 @@ import {fetchPosts} from "../../actions/post_actions"
 
 
 const mapStateToProp = (state)=>({
+    currentUser: state.session.id
     // posts: Object.values(state.entities.posts).reverse()
 })
 

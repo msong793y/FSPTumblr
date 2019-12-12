@@ -59,7 +59,11 @@ class Navbar extends React.Component{
         }
         let button1 = <a href="https://github.com/msong793y"><img  src="/icons8-github-64.png"></img></a>;
         let button2 = <a href="https://www.linkedin.com/in/miles-song/"><img className="LinkedINButtonImg" src="/icons8-linkedin-64.png"></img></a>;
-        let button3 = <img src="/icons8-email-64.png"></img>; 
+        let button3 = (
+          <a href="mailto:miles.song.ca@gmail.com">
+            <img src="/icons8-email-64.png"></img>
+          </a>
+        ); 
         let button4 = '';
         logoutBotton=<Link className= "TRBActual" to={pathWay}  >{buttonDisplay}</Link>
 
@@ -77,11 +81,22 @@ class Navbar extends React.Component{
                                        
             button1= <img src="/icons8-compose-64.png"  onClick={ ()=>this.props.activateModal("postingModal",null)}></img>
                     
-            button2 = <a href="https://www.linkedin.com/in/miles-song/"><img className="LinkedINButtonImg" src="/icons8-linkedin-64.png"></img></a>
+            button2 = (
+              <a href="https://www.linkedin.com/in/miles-song/">
+                <img
+                  className="LinkedINButtonImg"
+                  src="/icons8-linkedin-64.png"
+                ></img>
+              </a>
+            );
                      
             button3 = <a href="https://github.com/msong793y"><img src="/icons8-github-64.png"></img></a>;
                 
-            button4 = <img src="/icons8-homework-80.png"></img>
+            button4 = (
+              <a href="mailto:miles.song.ca@gmail.com">
+                <img src="/icons8-email-64.png"></img>
+              </a>
+            );
 
             logoutBotton= <img src="/icons8-exit-64.png" className="LogoutButton"  onClick={ ()=>this.props.logout()}></img>
 
@@ -100,7 +115,7 @@ class Navbar extends React.Component{
                         <Link className="logo"  to="/" >D</Link>
                     </div>
                     <div className="SearchBar">
-                        <input className="SearchBarText" type= "text" placeholder="Not Functioning Search"></input>
+                        <input className="SearchBarText" type= "text" placeholder=""></input>
                     </div>
                 </div>
                 <div className= "RightNav">
@@ -115,7 +130,7 @@ class Navbar extends React.Component{
                     onMouseEnter={()=>this.setState({menuDrop: ""})} 
                     >
                           {button2}
-                          {dropDownMenu}
+                          {/* {dropDownMenu} */}
                     </div>
                     <div className="LightingButtonContainer">
                         {button3}
