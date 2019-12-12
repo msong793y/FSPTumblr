@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions'
-import {destroyPost, createLike, deleteLike} from '../../actions/post_actions'
+import { destroyPost, createLike, deleteLike, newPost, fetchPosts} from '../../actions/post_actions'
 import CommentShow from './comment_show'
 
 
@@ -10,6 +10,35 @@ class PostFeedItem extends React.Component{
     constructor(props){
         super(props)
        
+    }
+
+
+
+    reblogPost() {
+
+        const post = this.props.post;
+        post.op_name = this.props.post.author.username
+        post.author_id = this.props.currentUser;
+
+
+
+        const formData = new FormData();
+        formData.append('post[body]', this.props.post.body);
+        formData.append('post[author_id]', this.props.currentUser);
+        console.log(this.props.post.content)
+        formData.append('post[content]', this.props.post.content);
+        formData.append('post[op_name]', this.props.post.author.username);
+       
+        $.ajax({
+            url: '/api/posts',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false
+        })
+            .then(fetchPosts())
+
+
     }
 
 
@@ -28,8 +57,7 @@ class PostFeedItem extends React.Component{
         />)
 
         this.props.post.postLikers.forEach( (like)=>{
-            console.log(like.id)
-            console.log(this.props.currentUser)
+           
             if(like.id === this.props.currentUser){
                 button2 = (<img src="/red-heart.png"
                     className="FeedLikeIcon"
@@ -38,6 +66,19 @@ class PostFeedItem extends React.Component{
             }
 
         })
+
+
+        
+
+        
+
+        //reblog button
+        let button3= (
+            <img src="/icons8-repeat-80.png"
+                className="FeedReblogIcon"
+                onClick={() => this.reblogPost()}
+            />
+        )
 
 
         
@@ -72,10 +113,7 @@ class PostFeedItem extends React.Component{
                         onClick={()=>dispatch(destroyPost(this.props.post))}
                         />
                         {button2}
-                        <img src="/icons8-repeat-80.png" 
-                        className="FeedReblogIcon"
-                        onClick={()=>dispatch(destroyPost(this.props.post))}
-                        />
+                        {button3}
                         <img src="/icons8-topic-80.png" 
                         className="FeedCommentIcon"
                         onClick={()=>dispatch(openModal("postComment", this.props.post.id))}

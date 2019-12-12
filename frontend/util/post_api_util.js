@@ -17,6 +17,7 @@ export const fetchAllPosts = () => (
 )
 
 export const createPost = (post) => {
+    console.log(post)
     return(
     $.ajax({
         method: "POST",

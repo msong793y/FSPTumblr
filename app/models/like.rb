@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: likes
+#
+#  id         :integer          not null, primary key
+#  liker_id   :integer          not null
+#  post_id    :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Like < ApplicationRecord
     validates :post_id, uniqueness: {scope: [:liker_id, :post_id]}
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_215257) do
+ActiveRecord::Schema.define(version: 2019_12_12_194033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_215257) do
     t.boolean "private", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "op_name", default: "null"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["hashtags"], name: "index_posts_on_hashtags"
   end
