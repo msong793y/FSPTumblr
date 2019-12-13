@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions'
 import { destroyPost, createLike, deleteLike, newPost, fetchPosts} from '../../actions/post_actions'
 import CommentShow from './comment_show'
+import AudioPlayer from "react-h5-audio-player";
+
 
 
 class PostFeedItem extends React.Component{
@@ -14,32 +16,32 @@ class PostFeedItem extends React.Component{
 
 
 
-    reblogPost() {
+    // reblogPost() {
 
-        const post = this.props.post;
-        post.op_name = this.props.post.author.username
-        post.author_id = this.props.currentUser;
+    //     const post = this.props.post;
+    //     post.op_name = this.props.post.author.username
+    //     post.author_id = this.props.currentUser;
 
 
 
-        const formData = new FormData();
-        formData.append('post[body]', this.props.post.body);
-        formData.append('post[author_id]', this.props.currentUser);
-        console.log(this.props.post.content)
-        formData.append('post[content]', this.props.post.content);
-        formData.append('post[op_name]', this.props.post.author.username);
+    //     const formData = new FormData();
+    //     formData.append('post[body]', this.props.post.body);
+    //     formData.append('post[author_id]', this.props.currentUser);
+    //     console.log(this.props.post.content)
+    //     formData.append('post[content]', this.props.post.content);
+    //     formData.append('post[op_name]', this.props.post.author.username);
        
-        $.ajax({
-            url: '/api/posts',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        })
-            .then(fetchPosts())
+    //     $.ajax({
+    //         url: '/api/posts',
+    //         method: 'POST',
+    //         data: formData,
+    //         contentType: false,
+    //         processData: false
+    //     })
+    //         .then(fetchPosts())
 
 
-    }
+    // }
 
 
 
@@ -67,9 +69,48 @@ class PostFeedItem extends React.Component{
 
         })
 
+    let feeditem=null;
 
-        
+    if(this.props.post.hashtags==="photo"){
 
+        feeditem = (
+          <div
+            className="FeedMediaContainer"
+            onClick={() =>
+              dispatch(openModal("showContent", this.props.post.contentUrl))
+            }
+          >
+            <img src={this.props.post.contentUrl} />
+          </div>
+        );
+    }
+    
+    if(this.props.post.hashtags==="audio"){
+
+        feeditem = (
+          <div
+            className="FeedMediaContainer"
+            // onClick={() =>
+            //   dispatch(openModal("showContent", this.props.post.contentUrl))
+            // }
+          >
+           
+                <AudioPlayer src={this.props.post.contentUrl} />
+          </div>
+        );
+    }
+    
+    if(this.props.post.hashtags==="video"){
+
+        feeditem = (
+          <div className="FeedMediaContainer">
+            <video controls>
+              <source src={this.props.post.contentUrl} />
+            </video>
+          </div>
+        );
+    }  
+    
         
 
         //reblog button
@@ -94,9 +135,7 @@ class PostFeedItem extends React.Component{
                     </div>
                     <div className="FeedItemContent">
 
-                        <div className="FeedMediaContainer" onClick={()=>dispatch(openModal("showContent", this.props.post.contentUrl))}>
-                            <img src={this.props.post.contentUrl} />
-                        </div>
+                        {feeditem}
                         <div className="FeedContentBody">
                              {this.props.post.body}
                         </div>

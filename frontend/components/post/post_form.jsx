@@ -1,4 +1,7 @@
 import React from 'react';
+import AudioPlayer from "react-h5-audio-player";
+
+
 
 export default class Form extends React.Component {
   constructor(props) {
@@ -8,6 +11,7 @@ export default class Form extends React.Component {
       author_id: this.props.currentUser,
       body: "",
       hashtags: this.props.contentType,
+      op_name: "",
       contentFile: null,
       contentUrl: null
     };
@@ -55,9 +59,7 @@ export default class Form extends React.Component {
     })
       .then(this.props.fetchPosts())
       .then(this.props.closeModal())
-    setTimeout(this.props.fetchPosts, 1000)
-
-
+    setTimeout(this.props.fetchPosts, 500)
   }
 
   render() {
@@ -84,17 +86,46 @@ export default class Form extends React.Component {
         break;
 
       case "quote":
-
+        button1 = (
+          <div className="OptionalPostFormContainer">
+            <input className="PhotoInputText QuoteTextArea" type="text"
+              id="post-body"
+              placeholder="Give us your quote"
+              value={this.state.op_name}
+              onChange={this.update("op_name")} />
+          </div >
+        )
         break;
 
       case "link":
+        button1 = (
+          <div className="OptionalPostFormContainer">
+            <input className="PhotoInputText LinkTextArea" type="url"
+              id="post-body"
+              placeholder="You Link"
+              value={this.state.op_name}
+              onChange={this.update("op_name")} />
+          </div >
+        )
 
         break;
 
       case "audio":
+        button1 = (
+          <div className="OptionalPostFormContainer">
+            <input type="file" className="AudioFileUpload"
+              onChange={this.handleFile.bind(this)} />
+          </div >
+        )
 
         break;
       case "video":
+        button1 = (
+          <div className="OptionalPostFormContainer">
+            <input type="file" className="AudioFileUpload"
+              onChange={this.handleFile.bind(this)} />
+          </div >
+        )
 
         break;
 
@@ -103,40 +134,46 @@ export default class Form extends React.Component {
         break;
     }
     // debugger
-    const preview = this.state.contentUrl ? <img src={this.state.contentUrl} /> : null;
-    // switch (this.state.hashtags) {
-    //   case "text":
+    let preview = null;
+     if(this.state.contentUrl){
+       switch (this.state.hashtags) {
+         case "text":
 
-    //     break;
-    //   case "photo":
+           break;
+         case "photo":
 
-    //     button1 = (
-    //       <div className="PhotoInputHashtagsContainer">
-    //         <input type="file" className="PhotoFileUpload"
-    //           onChange={this.handleFile.bind(this)} />
-    //       </div >
-    //     )
-    //     break;
+           preview = (
+             <img src={this.state.contentUrl} /> 
+           )
+           break;
 
-    //   case "quote":
+         case "quote":
 
-    //     break;
+           break;
 
-    //   case "link":
+         case "link":
 
-    //     break;
+           break;
 
-    //   case "audio":
+         case "audio":
+           preview = <AudioPlayer autoPlay src={this.state.contentUrl} />;
+           break;
 
-    //     break;
-    //   case "video":
+         case "video":
+           preview = (
+             <video controls width="250">
+               <source src={this.state.contentUrl} />
+             </video>
+           );
+           break;
 
-    //     break;
 
+         default:
+           break;
+       }
 
-    //   default:
-    //     break;
-    // }
+  
+      }
 
 
 
@@ -144,35 +181,39 @@ export default class Form extends React.Component {
       <div className="PhotSubmissionFormContainer">
         <div>
           <div className="PhotoSubmissionFormAvator">
-            <img src="/default_profile_pic.png" className="PhotoFormProfilePic" />
+            <img
+              src="/default_profile_pic.png"
+              className="PhotoFormProfilePic"
+            />
           </div>
         </div>
+
         <div className="PhotoSubmitFormContainer">
-          <form className="PhotoSubmitForm" onSubmit={this.handleSubmit.bind(this)}>
+          <form
+            className="PhotoSubmitForm"
+            onSubmit={this.handleSubmit.bind(this)}
+          >
             <div className="UserNameDisplayContainer">
-              <div className="UserNameDisplay">
-                {this.props.username}
-              </div>
+              <div className="UserNameDisplay">{this.props.username}</div>
             </div>
             {button1}
             <div className="PhotoInputTextContainer">
-              <input className="PhotoInputText" type="text"
+              <input
+                className="PhotoInputText"
+                type="text"
                 id="post-body"
-                placeholder="Your Text Here"
+                placeholder="What says you?"
                 value={this.state.body}
-                onChange={this.update("body")} />
-            </div >
-
-            <div className="ImagePreviewContainer">
-              {preview}
+                onChange={this.update("body")}
+              />
             </div>
 
             <div className="PhotSubmitFormButtonContainer">
               <button className="PhotSubmitFormButton">Submit</button>
             </div>
-
           </form>
         </div>
+        <div className="ImagePreviewContainer">{preview}</div>
       </div>
     );
   }
