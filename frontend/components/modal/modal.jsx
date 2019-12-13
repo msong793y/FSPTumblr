@@ -8,25 +8,25 @@ import CommentPostContainer from "../comment/comment_post_container";
 // import LoginFormContainer from '../session_form/login_form_container';
 // import SignupFormContainer from '../session_form/signup_form_container';
 
-function Modal({modal, content, closeModal}) {
-  
+function Modal({ modal, content, closeModal }) {
+
   if (!modal) {
     return null;
   }
   let component;
   switch (modal) {
-    
+
     case 'createPost':
-      component = <CreatePostContainer/>;
+      component = <CreatePostContainer contentType={content} />;
       break;
     case 'postingModal':
       component = <PostingModalContainer />;
       break;
     case 'showContent':
-      component= <ShowContent content={content} />
+      component = <ShowContent content={content} />
       break;
     case 'postComment':
-      component = <CommentPostContainer content={content}/>
+      component = <CommentPostContainer content={content} />
       break;
     // case 'signup':
     //   component = <SignupFormContainer />;
@@ -37,7 +37,7 @@ function Modal({modal, content, closeModal}) {
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+        {component}
       </div>
     </div>
   );
