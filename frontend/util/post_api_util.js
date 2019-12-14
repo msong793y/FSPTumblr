@@ -38,7 +38,6 @@ export const deletePost =(post) =>{
 }
 
 export const createComment =( comment) =>{
-    debugger
     return (
         
         $.ajax({

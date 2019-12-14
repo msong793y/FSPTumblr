@@ -1,5 +1,7 @@
-import React from 'react';
+
+import React, { useCallback } from "react";
 import AudioPlayer from "react-h5-audio-player";
+import Dropzone from "react-dropzone";
 
 
 
@@ -22,8 +24,8 @@ export default class Form extends React.Component {
     this.setState({ [field]: e.currentTarget.value });
   }
 
-  handleFile(e) {
-    const file = e.currentTarget.files[0];
+  handleFile(files) {
+    const file = files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
 
@@ -79,10 +81,18 @@ export default class Form extends React.Component {
 
         button1 = (
           <div className="OptionalPostFormContainer">
-            <input type="file" className="PhotoFileUpload"
-              onChange={this.handleFile.bind(this)} />
-          </div >
-        )
+            <Dropzone onDrop={acceptedFiles => this.handleFile(acceptedFiles)}>
+              {({ getRootProps, getInputProps }) => (
+                <div className="Drop-Zone" Drop-Zone {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <p className="Drop-Zone-Photo_Inher">
+                    Drag and drop a Photo here, or click to select Photo file
+                  </p>
+                </div>
+              )}
+            </Dropzone>
+          </div>
+        );
         break;
 
       case "quote":
@@ -112,20 +122,36 @@ export default class Form extends React.Component {
 
       case "audio":
         button1 = (
-          <div className="OptionalPostFormContainer">
-            <input type="file" className="AudioFileUpload"
-              onChange={this.handleFile.bind(this)} />
-          </div >
-        )
+          <Dropzone onDrop={acceptedFiles => this.handleFile(acceptedFiles)}>
+            {({ getRootProps, getInputProps }) => (
+           
+                <div className="Drop-Zone" {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <p>
+                    Drag and drop a Audio file here, or click to select Audio
+                    file
+                  </p>
+                </div>
+        
+            )}
+          </Dropzone>
+        );
 
         break;
       case "video":
         button1 = (
-          <div className="OptionalPostFormContainer">
-            <input type="file" className="AudioFileUpload"
-              onChange={this.handleFile.bind(this)} />
-          </div >
-        )
+          <Dropzone onDrop={acceptedFiles => this.handleFile(acceptedFiles)}>
+            {({ getRootProps, getInputProps }) => (
+             
+                <div className="Drop-Zone" Drop-Zone {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <p>
+                    Drag and drop a Video here, or click to select Video file
+                  </p>
+                </div>
+            )}
+          </Dropzone>
+        );
 
         break;
 
