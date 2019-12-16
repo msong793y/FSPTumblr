@@ -1,24 +1,46 @@
 .Following-Container{
     position: fixed;
-    left:800px;
-    top: 160px;
-    background-color: hotpink;
+    left:750px;
+    top: 150px;
+    // border-top:1px solid white;
+    border-radius: 5px;
+    // border-left:1px solid white;
+    // border-right: 1px solid white;
+}
+.YouAreFollowing{
+    font-size:20px;
+    padding-bottom: 5px;
+    // border-bottom: 1px solid white;
 }
 
 
 .Following-Item{
+    padding-bottom: 2px;
+    border-top:1px ridge white;
+    border-top-color: ivory;
     position:relative;
     height:50px;
     width:250px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
 }
-
+.Following-Item:hover{
+    background-color: darkgray;
+}
 
 .FollowProfilePic{
     width:40px;
     height: 40px;
+}
+
+.FollowName{
+    font-size:19px;
+}
+
+.UnfollowIcon{
+    width:80%;
+    height:80%;
 }

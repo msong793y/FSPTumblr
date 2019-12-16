@@ -1243,7 +1243,7 @@ function Following(props) {
     className: "Following-Container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "YouAreFollowing"
-  }, "You are Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, followings.map(function (following) {
+  }, "You Are Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, followings.map(function (following) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "Following-Item"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1256,7 +1256,10 @@ function Following(props) {
       onClick: function onClick() {
         return props.deleteFollow(following);
       }
-    }, "unfollow"));
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      className: "UnfollowIcon",
+      src: "/icons8-denied-30.png"
+    })));
   })));
 }
 

@@ -10,25 +10,27 @@ export default function Following(props){
 
     return(
         <div className = "Following-Container">
-            <h3 className = 'YouAreFollowing'>You are Following</h3>
+            <h3 className = 'YouAreFollowing'>You Are Following</h3>
             <div>
                 {followings.map(following=>{
-                    return(
-                    <div className="Following-Item">
-                      <img
-                        src="/default_profile_pic.png"
-                        className="FollowProfilePic"
-                      />
-                      <h4 className="FollowName">
-                        {following.username}  
-                      </h4>
-                      <div className = "UnfollowBotton" 
-                      onClick={()=>props.deleteFollow(following)}
-                      >
-                            unfollow
-                       </div>   
-                    </div>   
-                    ) 
+                    return (
+                      <div className="Following-Item">
+                        <img
+                          src="/default_profile_pic.png"
+                          className="FollowProfilePic"
+                        />
+                        <h4 className="FollowName">{following.username}</h4>
+                        <div
+                          className="UnfollowBotton"
+                          onClick={() => props.deleteFollow(following)}
+                        >
+                          <img
+                            className="UnfollowIcon"
+                            src="/icons8-denied-30.png"
+                          ></img>
+                        </div>
+                      </div>
+                    ); 
                 }) }
 
             </div>
