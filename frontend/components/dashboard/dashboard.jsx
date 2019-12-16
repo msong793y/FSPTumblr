@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import CreatePostFormContainer from '../post/post_form'
 import PostBarContainer from "../postbar/postbar_container"
 import Feed from "../feed/feed_container"
+import Follow from "../followingBar/following_bar_container"
 // import {fetchPosts} from "../../actions/post_actions"
 
 
@@ -20,15 +21,20 @@ class Dashboard extends React.Component{
 
     render(){
 
-        return(
-            <div className="ContentMain">
-                <PostBarContainer />
-                <Feed />
+        return (
+          <div className="ContentMain">
+            <div>
+              <PostBarContainer />
+              <Feed />
+            </div>
+            <div>
+                <Follow/>
                 
-                {/* <CreatePostFormContainer /> */}
             </div>
 
-        )
+            {/* <CreatePostFormContainer /> */}
+          </div>
+        );
 
     }
 

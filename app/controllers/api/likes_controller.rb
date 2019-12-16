@@ -5,7 +5,7 @@ class Api::LikesController < ApplicationController
         if like.save
             redirect_to "/api/posts"
         else
-            render json: @like.errors.full_messages, status: 404
+            render json: like.errors.full_messages, status: 404
         end
     end
 

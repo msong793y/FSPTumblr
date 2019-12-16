@@ -17,7 +17,6 @@ export const fetchAllPosts = () => (
 )
 
 export const createPost = (post) => {
-    console.log(post)
     return(
     $.ajax({
         method: "POST",
@@ -69,3 +68,25 @@ export const deleteLike = (likeObj) => {
         })
     )
 }
+
+
+export const createFollow = (follow) => {
+
+    return (
+        $.ajax({
+            method:"POST",
+            url: "/api/follows",
+            data: {follow}
+        })
+
+    )
+}
+
+
+export const deleteFollow = follow => {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/follows/1`,
+    data: { follow }
+  });
+};

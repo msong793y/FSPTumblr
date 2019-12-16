@@ -42,3 +42,21 @@ export const createLike = (like) => (dispatch) => {
 export const deleteLike = (likeObj)=>(dispatch) => {
     return (APIUtil.deleteLike(likeObj).then(posts => (dispatch(getAllPosts(posts)))))
 }
+
+//Current User login after follows
+
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+
+
+export const receiveCurrentUser = currentUser => ({
+  type: RECEIVE_CURRENT_USER,
+  currentUser
+});
+
+export const createFollow = follow => dispatch => {
+  return APIUtil.createFollow(follow).then(user => dispatch(receiveCurrentUser(user)));
+};
+
+export const deleteFollow = follow => dispatch => {
+  return APIUtil.deleteFollow(follow).then(user => dispatch(receiveCurrentUser(user)));
+};

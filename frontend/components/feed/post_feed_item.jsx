@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions'
-import { destroyPost, createLike, deleteLike, newPost, fetchPosts} from '../../actions/post_actions'
+import { destroyPost, createLike, deleteLike, createFollow, deleteFollow} from '../../actions/post_actions'
 import CommentShow from './comment_show'
 import AudioPlayer from "react-h5-audio-player";
 
@@ -50,7 +50,7 @@ class PostFeedItem extends React.Component{
     render(){
         const likeObj = {};
         likeObj.post_id = this.props.post.id
-        likeObj.liker_id = this.props.currentUser
+        likeObj.liker_id = this.props.currentUser.id
 
 
         let button2 = (<img src="/icons8-heart-80.png"
@@ -60,7 +60,7 @@ class PostFeedItem extends React.Component{
 
         this.props.post.postLikers.forEach( (like)=>{
            
-            if(like.id === this.props.currentUser){
+            if(like.id === this.props.currentUser.id){
                 button2 = (<img src="/red-heart.png"
                     className="FeedLikeIcon"
                     onClick={() => dispatch(deleteLike(likeObj))}
@@ -68,6 +68,49 @@ class PostFeedItem extends React.Component{
             }
 
         })
+
+        
+
+        const follow = {};
+        follow.following_id = this.props.post.author_id;
+        follow.follower_id = this.props.currentUser.id;
+
+         let button3 = (
+           <img
+             src="/icons8-repeat-80.png"
+             className="FeedReblogIcon"
+             onClick={() => dispatch(createFollow(follow))}
+           />
+         );
+
+        this.props.currentUser.followings.forEach(following=>{
+            if(following.id === this.props.post.author_id){
+                button3 = (
+                  <img
+                    src="/icons8-synchronize-64.png"
+                    className="FeedReblogIcon"
+                    onClick={() => dispatch(deleteFollow(follow))}
+                  />
+                );
+
+            }
+
+        })
+
+        // this.props.post.postLikers.forEach(like => {
+        //   if (like.id === this.props.currentUser) {
+        //     button2 = (
+        //       <img
+        //         src="/red-heart.png"
+        //         className="FeedLikeIcon"
+        //         onClick={() => dispatch(deleteLike(likeObj))}
+        //       />
+        //     );
+        //   }
+        // }
+        // );
+
+
 
     let feeditem=null;
 
@@ -114,12 +157,7 @@ class PostFeedItem extends React.Component{
         
 
         //reblog button
-        let button3= (
-            <img src="/icons8-repeat-80.png"
-                className="FeedReblogIcon"
-                onClick={() => this.reblogPost()}
-            />
-        )
+    
 
 
         
