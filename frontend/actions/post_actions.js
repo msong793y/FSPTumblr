@@ -13,7 +13,6 @@ const getAllPosts = (posts)=>({
 export const receiveSessionErrors= (errors) => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
-  
   })
 
 
