@@ -28,6 +28,7 @@
 }
 .Following-Item:hover{
     background-color: darkgray;
+    bottom: 2px;
 }
 
 .FollowProfilePic{
@@ -43,3 +44,11 @@
     width:80%;
     height:80%;
 }
+
+
+.ShowAllPost{
+    justify-content: center;
+    background-color: #20B8FF;
+    border-radius: 3px;
+}
+

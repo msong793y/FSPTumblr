@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions'
-import { destroyPost, createLike, deleteLike, createFollow, deleteFollow} from '../../actions/post_actions'
+import { destroyPost, createLike, deleteLike, createFollow, deleteFollow, fetchSomePosts} from '../../actions/post_actions'
 import CommentShow from './comment_show'
 import AudioPlayer from "react-h5-audio-player";
 
@@ -54,17 +54,20 @@ class PostFeedItem extends React.Component{
 
 
         let button2 = (<img src="/icons8-heart-80.png"
-            className="FeedLikeIcon"
+            className="FeedLikeIcon Clickable"
             onClick={() => dispatch(createLike(likeObj))}
         />)
 
         this.props.post.postLikers.forEach( (like)=>{
            
             if(like.id === this.props.currentUser.id){
-                button2 = (<img src="/red-heart.png"
-                    className="FeedLikeIcon"
+                button2 = (
+                  <img
+                    src="/red-heart.png"
+                    className="FeedLikeIcon Clickable"
                     onClick={() => dispatch(deleteLike(likeObj))}
-                />)
+                  />
+                );
             }
 
         })
@@ -78,7 +81,7 @@ class PostFeedItem extends React.Component{
          let button3 = (
            <img
              src="/icons8-repeat-80.png"
-             className="FeedReblogIcon"
+             className="FeedReblogIcon Clickable"
              onClick={() => dispatch(createFollow(follow))}
            />
          );
@@ -88,7 +91,7 @@ class PostFeedItem extends React.Component{
                 button3 = (
                   <img
                     src="/icons8-synchronize-64.png"
-                    className="FeedReblogIcon"
+                    className="FeedReblogIcon Clickable"
                     onClick={() => dispatch(deleteFollow(follow))}
                   />
                 );
@@ -118,7 +121,7 @@ class PostFeedItem extends React.Component{
 
         feeditem = (
           <div
-            className="FeedMediaContainer"
+            className="FeedMediaContainer Clickable"
             onClick={() =>
               dispatch(openModal("showContent", this.props.post.contentUrl))
             }
@@ -162,45 +165,51 @@ class PostFeedItem extends React.Component{
 
         
         
-    return(
-            <div className= "PostFeedItemContainer">
-                <div className = "FeedItemAvator">
-                    <img src="/default_profile_pic.png" className="FeedProfilePic"/>
-                </div>
-                <div className = "FeedItemBox">
-                    <div className= "AuthorshipInfo">
-                        {this.props.post.author.username}
-                    </div>
-                    <div className="FeedItemContent">
-
-                        {feeditem}
-                        <div className="FeedContentBody">
-                             {this.props.post.body}
-                        </div>
-                        <div className="FeedContentHashtags">
-                            
-                        </div>
-                        <div className = "FeedContentCommentContainer">
-                            {this.props.post.postComments.map(comment=>(<CommentShow comment={comment} key={comment.id} />))}
-                        </div>
-                    </div>
-                    <div className= "FeedItemFooterInfo">
-                        <img src="/icons8-gear-100.png" 
-                        className="FeedGearIcon"
-                        onClick={()=>dispatch(destroyPost(this.props.post))}
-                        />
-                        {button2}
-                        {button3}
-                        <img src="/icons8-topic-80.png" 
-                        className="FeedCommentIcon"
-                        onClick={()=>dispatch(openModal("postComment", this.props.post.id))}
-                        />
-                        <br></br>
-                    </div>
-                </div>
-
+    return (
+      <div className="PostFeedItemContainer">
+        <div
+          className="FeedItemAvator Clickable"
+          onClick={() => dispatch(fetchSomePosts(this.props.post.author_id))}
+        >
+          <img src="/default_profile_pic.png" className="FeedProfilePic" />
+        </div>
+        <div className="FeedItemBox">
+          <div
+            className="AuthorshipInfo Clickable"
+            onClick={() => dispatch(fetchSomePosts(this.props.post.author_id))}
+          >
+            {this.props.post.author.username}
+          </div>
+          <div className="FeedItemContent">
+            {feeditem}
+            <div className="FeedContentBody">{this.props.post.body}</div>
+            <div className="FeedContentHashtags"></div>
+            <div className="FeedContentCommentContainer">
+              {this.props.post.postComments.map(comment => (
+                <CommentShow comment={comment} key={comment.id} />
+              ))}
             </div>
-        )
+          </div>
+          <div className="FeedItemFooterInfo">
+            <img
+              src="/icons8-gear-100.png"
+              className="FeedGearIcon Clickable"
+              onClick={() => dispatch(destroyPost(this.props.post))}
+            />
+            {button2}
+            {button3}
+            <img
+              src="/icons8-topic-80.png"
+              className="FeedCommentIcon Clickable"
+              onClick={() =>
+                dispatch(openModal("postComment", this.props.post.id))
+              }
+            />
+            <br></br>
+          </div>
+        </div>
+      </div>
+    );
     }
 }
 

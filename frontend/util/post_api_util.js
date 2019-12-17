@@ -16,13 +16,15 @@ export const fetchAllPosts = () => (
 
 )
 
-// export const fetchSomePosts = (id)=(
-//     $.ajax({
-//         method: "GET",
-//         url:`/api/post/`,
-//         data:{id}
-//     })
-// )
+export const fetchSomePosts = (user_id)=>{
+
+    return(
+    $.ajax({
+        method: "GET",
+        url:`/api/post/`,
+        data:{user_id}
+    })
+    )}
 
 export const createPost = (post) => {
     return(

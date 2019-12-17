@@ -39,6 +39,15 @@ class Api::PostsController < ApplicationController
         end
     end
 
+     def user_post
+        @posts = Post.where("author_id = ?", params[:user_id]).includes(:comments,:author)
+        if @posts
+            render :index
+         else
+            render json: ["doesn't really work"], status: 401
+         end
+    end
+
     private
 
     def post_params

@@ -23,10 +23,10 @@ export const fetchPosts = ( )=>(dispatch)=>(
 
 )
 
-// export const fetchSomePosts = (id)=>(dispatch) =>
-//          APIUtil.fetchSomePosts(id).then(posts =>
-//            dispatch(getAllPosts(posts))
-//          );
+export const fetchSomePosts = (id)=>(dispatch) =>
+         APIUtil.fetchSomePosts(id).then(posts =>
+           dispatch(getAllPosts(posts))
+         );
 
 export const newPost = (post) => (dispatch)=>(
     APIUtil.createPost(post).then(posts=> (dispatch(getAllPosts(posts)

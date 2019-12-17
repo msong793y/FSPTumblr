@@ -104,38 +104,42 @@ class Navbar extends React.Component {
 
 
         return (
-            <div className={`NavBarMain ${bottomBorder ? "MainNavDashboard" : ""}`} onMouseLeave={() => this.setState({ menuDrop: "menuGone" })} >
-                <div className="LeftNav">
-                    <div className="MainIcon">
-                        <Link className="logo" to="/" >D</Link>
-                    </div>
-                    <div className="SearchBar">
-                        <input className="SearchBarText" type="text" placeholder=""></input>
-                    </div>
-                </div>
-                <div className="RightNav">
-                    <div className="TopRightButtonContainer">
-                        {logoutBotton}
-                    </div>
-
-                    <div className="PostButtonContainer">
-                        {button1}
-                    </div>
-                    <div className={`MenuButtonContainer`}
-                        onMouseEnter={() => this.setState({ menuDrop: "" })}
-                    >
-                        {button2}
-                        {/* {dropDownMenu} */}
-                    </div>
-                    <div className="LightingButtonContainer">
-                        {button3}
-                    </div>
-                    <div className="HomeButtonCotainer">
-                        {button4}
-                    </div>
-                </div>
+          <div
+            className={`NavBarMain ${bottomBorder ? "MainNavDashboard" : ""}`}
+            onMouseLeave={() => this.setState({ menuDrop: "menuGone" })}
+          >
+            <div className="LeftNav">
+              <div className="MainIcon">
+                <Link className="logo" to="/">
+                  D
+                </Link>
+              </div>
+              <div className="SearchBar">
+                <input
+                  className="SearchBarText"
+                  type="text"
+                  placeholder=""
+                ></input>
+              </div>
             </div>
-        )
+            <div className="RightNav">
+              <div className="TopRightButtonContainer Clickable">
+                {logoutBotton}
+              </div>
+
+              <div className="PostButtonContainer Clickable">{button1}</div>
+              <div
+                className={`MenuButtonContainer Clickable`}
+                onMouseEnter={() => this.setState({ menuDrop: "" })}
+              >
+                {button2}
+                {/* {dropDownMenu} */}
+              </div>
+              <div className="LightingButtonContainer Clickable">{button3}</div>
+              <div className="HomeButtonCotainer Clickable">{button4}</div>
+            </div>
+          </div>
+        );
     }
 
 }

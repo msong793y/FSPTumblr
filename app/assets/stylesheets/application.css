@@ -395,3 +395,7 @@ textarea {
 
 }
 
+
+.Clickable:hover{
+    cursor: pointer;
+}

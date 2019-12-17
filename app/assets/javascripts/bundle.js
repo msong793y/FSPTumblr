@@ -120,7 +120,7 @@ var closeModal = function closeModal() {
 /*!******************************************!*\
   !*** ./frontend/actions/post_actions.js ***!
   \******************************************/
-/*! exports provided: GET_ALL_POSTS, receiveSessionErrors, fetchPosts, newPost, destroyPost, createComment, createLike, deleteLike, RECEIVE_CURRENT_USER, receiveCurrentUser, createFollow, deleteFollow */
+/*! exports provided: GET_ALL_POSTS, receiveSessionErrors, fetchPosts, fetchSomePosts, newPost, destroyPost, createComment, createLike, deleteLike, RECEIVE_CURRENT_USER, receiveCurrentUser, createFollow, deleteFollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -128,6 +128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GET_ALL_POSTS", function() { return GET_ALL_POSTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSessionErrors", function() { return receiveSessionErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPosts", function() { return fetchPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSomePosts", function() { return fetchSomePosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newPost", function() { return newPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPost", function() { return destroyPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
@@ -160,11 +161,14 @@ var fetchPosts = function fetchPosts() {
       return dispatch(getAllPosts(posts));
     });
   };
-}; // export const fetchSomePosts = (id)=>(dispatch) =>
-//          APIUtil.fetchSomePosts(id).then(posts =>
-//            dispatch(getAllPosts(posts))
-//          );
-
+};
+var fetchSomePosts = function fetchSomePosts(id) {
+  return function (dispatch) {
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchSomePosts"](id).then(function (posts) {
+      return dispatch(getAllPosts(posts));
+    });
+  };
+};
 var newPost = function newPost(post) {
   return function (dispatch) {
     return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["createPost"](post).then(function (posts) {
@@ -1019,7 +1023,7 @@ function (_React$Component) {
       likeObj.liker_id = this.props.currentUser.id;
       var button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-heart-80.png",
-        className: "FeedLikeIcon",
+        className: "FeedLikeIcon Clickable",
         onClick: function onClick() {
           return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["createLike"])(likeObj));
         }
@@ -1028,7 +1032,7 @@ function (_React$Component) {
         if (like.id === _this.props.currentUser.id) {
           button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: "/red-heart.png",
-            className: "FeedLikeIcon",
+            className: "FeedLikeIcon Clickable",
             onClick: function onClick() {
               return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deleteLike"])(likeObj));
             }
@@ -1040,7 +1044,7 @@ function (_React$Component) {
       follow.follower_id = this.props.currentUser.id;
       var button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-repeat-80.png",
-        className: "FeedReblogIcon",
+        className: "FeedReblogIcon Clickable",
         onClick: function onClick() {
           return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["createFollow"])(follow));
         }
@@ -1049,7 +1053,7 @@ function (_React$Component) {
         if (following.id === _this.props.post.author_id) {
           button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
             src: "/icons8-synchronize-64.png",
-            className: "FeedReblogIcon",
+            className: "FeedReblogIcon Clickable",
             onClick: function onClick() {
               return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deleteFollow"])(follow));
             }
@@ -1072,7 +1076,7 @@ function (_React$Component) {
 
       if (this.props.post.hashtags === "photo") {
         feeditem = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "FeedMediaContainer",
+          className: "FeedMediaContainer Clickable",
           onClick: function onClick() {
             return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])("showContent", _this.props.post.contentUrl));
           }
@@ -1106,14 +1110,20 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PostFeedItemContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "FeedItemAvator"
+        className: "FeedItemAvator Clickable",
+        onClick: function onClick() {
+          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["fetchSomePosts"])(_this.props.post.author_id));
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/default_profile_pic.png",
         className: "FeedProfilePic"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemBox"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "AuthorshipInfo"
+        className: "AuthorshipInfo Clickable",
+        onClick: function onClick() {
+          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["fetchSomePosts"])(_this.props.post.author_id));
+        }
       }, this.props.post.author.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemContent"
       }, feeditem, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1131,13 +1141,13 @@ function (_React$Component) {
         className: "FeedItemFooterInfo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-gear-100.png",
-        className: "FeedGearIcon",
+        className: "FeedGearIcon Clickable",
         onClick: function onClick() {
           return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
         }
       }), button2, button3, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-topic-80.png",
-        className: "FeedCommentIcon",
+        className: "FeedCommentIcon Clickable",
         onClick: function onClick() {
           return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])("postComment", _this.props.post.id));
         }
@@ -1247,16 +1257,20 @@ function Following(props) {
     className: "Following-Container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     className: "YouAreFollowing"
-  }, "You Are Following"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, followings.map(function (following) {
+  }, "FOLLOWING:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, followings.map(function (following, index) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "Following-Item"
+      key: index,
+      className: "Following-Item Clickable",
+      onClick: function onClick() {
+        return props.fetchSomePosts(following.id);
+      }
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
       src: "/default_profile_pic.png",
       className: "FollowProfilePic"
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
       className: "FollowName"
     }, following.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "UnfollowBotton",
+      className: "UnfollowBotton Clickable",
       onClick: function onClick() {
         return props.deleteFollow(following);
       }
@@ -1264,7 +1278,12 @@ function Following(props) {
       className: "UnfollowIcon",
       src: "/icons8-denied-30.png"
     })));
-  })));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Following-Item ShowAllPost Clickable",
+    onClick: function onClick() {
+      return props.fetchPosts();
+    }
+  }, "Show All Posts")));
 }
 
 /***/ }),
@@ -1295,6 +1314,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     deleteFollow: function deleteFollow(follow) {
       return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["deleteFollow"])(follow));
+    },
+    fetchSomePosts: function fetchSomePosts(user_id) {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSomePosts"])(user_id));
+    },
+    fetchPosts: function fetchPosts() {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPosts"])());
     }
   };
 };
@@ -1634,20 +1659,20 @@ function (_React$Component) {
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "RightNav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "TopRightButtonContainer"
+        className: "TopRightButtonContainer Clickable"
       }, logoutBotton), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "PostButtonContainer"
+        className: "PostButtonContainer Clickable"
       }, button1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "MenuButtonContainer",
+        className: "MenuButtonContainer Clickable",
         onMouseEnter: function onMouseEnter() {
           return _this2.setState({
             menuDrop: ""
           });
         }
       }, button2), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "LightingButtonContainer"
+        className: "LightingButtonContainer Clickable"
       }, button3), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "HomeButtonCotainer"
+        className: "HomeButtonCotainer Clickable"
       }, button4)));
     }
   }]);
@@ -2098,14 +2123,17 @@ function (_React$Component) {
       var _this = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "PostBarMain"
+        className: "PostBarMain Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "PostBarProfilePic"
+        className: "PostBarProfilePic ",
+        onClick: function onClick() {
+          return _this.props.fetchPosts();
+        }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/default_profile_pic.png",
         className: "TextButton"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "PostBarIcons"
+        className: "PostBarIcons "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "TextButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -2177,7 +2205,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _postbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postbar */ "./frontend/components/postbar/postbar.jsx");
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -2200,11 +2230,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["closeModal"])());
+    },
+    fetchPosts: function fetchPosts() {
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProp, mapDispatchToProps)(_postbar__WEBPACK_IMPORTED_MODULE_1__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProp, mapDispatchToProps)(_postbar__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 
@@ -3277,12 +3310,13 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchAllPosts, createPost, deletePost, createComment, createLike, deleteLike, createFollow, deleteFollow */
+/*! exports provided: fetchAllPosts, fetchSomePosts, createPost, deletePost, createComment, createLike, deleteLike, createFollow, deleteFollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllPosts", function() { return fetchAllPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSomePosts", function() { return fetchSomePosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
@@ -3302,14 +3336,16 @@ var fetchAllPosts = function fetchAllPosts() {
     method: "GET",
     url: "/api/posts"
   });
-}; // export const fetchSomePosts = (id)=(
-//     $.ajax({
-//         method: "GET",
-//         url:`/api/post/`,
-//         data:{id}
-//     })
-// )
-
+};
+var fetchSomePosts = function fetchSomePosts(user_id) {
+  return $.ajax({
+    method: "GET",
+    url: "/api/post/",
+    data: {
+      user_id: user_id
+    }
+  });
+};
 var createPost = function createPost(post) {
   return $.ajax({
     method: "POST",
