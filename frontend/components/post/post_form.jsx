@@ -54,7 +54,6 @@ export default class Form extends React.Component {
 
       formData.append('post[content]', this.state.contentFile);
     }
-    console.log(formData)
     $.ajax({
       url: '/api/posts',
       method: 'POST',
@@ -208,14 +207,14 @@ export default class Form extends React.Component {
 
     return (
       <div className="PhotSubmissionFormContainer">
-        <div>
+        {/* <div>
           <div className="PhotoSubmissionFormAvator">
             <img
               src="/default_profile_pic.png"
               className="PhotoFormProfilePic"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="PhotoSubmitFormContainer">
           <form
@@ -242,7 +241,6 @@ export default class Form extends React.Component {
                 className="PhotSubmitFormButton"
                 onClick={() => this.props.closeModal()}
               >
-                {" "}
                 Cancel
               </button>
               <div className="PrivateRadio">

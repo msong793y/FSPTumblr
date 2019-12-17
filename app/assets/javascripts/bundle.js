@@ -1897,7 +1897,6 @@ function (_React$Component) {
         formData.append('post[content]', this.state.contentFile);
       }
 
-      console.log(formData);
       $.ajax({
         url: '/api/posts',
         method: 'POST',
@@ -2042,12 +2041,7 @@ function (_React$Component) {
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PhotSubmissionFormContainer"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "PhotoSubmissionFormAvator"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/default_profile_pic.png",
-        className: "PhotoFormProfilePic"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PhotoSubmitFormContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "PhotoSubmitForm",
@@ -2072,7 +2066,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this4.props.closeModal();
         }
-      }, " ", "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PrivateRadio"
       }, "Private:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "radio"
@@ -2653,7 +2647,9 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "DemoUserLogin",
         onClick: this.handleDemo
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Demo User Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "DemoUserLoginButton"
+      }, "Demo User Login")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form-box"
       }, this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2663,15 +2659,15 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.username,
-        onChange: this.update('username'),
+        onChange: this.update("username"),
         className: "login-input",
-        placeholder: "Usernname"
+        placeholder: "Username"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "loginInputContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
-        onChange: this.update('password'),
+        onChange: this.update("password"),
         className: "login-input",
         placeholder: "Password"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {

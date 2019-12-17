@@ -90,8 +90,11 @@
 };
 
 .DemoUserLogin>*{
-    position: relative;;
+    position: relative;
+    top: 10px;
     background-color:#20B8FF;
     color:whitesmoke;
     border-radius: 4px;
+    height: 40px;
+    width: 160px;
 }

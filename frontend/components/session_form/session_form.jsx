@@ -86,32 +86,37 @@ demoLogin(user,pass) {
     
     return (
       <div className="login-form-container">
-        <div className= "DemoUserLogin" onClick={this.handleDemo}>
-            <button>Demo User Login</button>
+        <div className="DemoUserLogin" onClick={this.handleDemo}>
+          <button className="DemoUserLoginButton">Demo User Login</button>
         </div>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           {this.renderErrors()}
           <div className="login-form">
-          
             <label className="loginInputContainer">
-              <input type="text"
+              <input
+                type="text"
                 value={this.state.username}
-                onChange={this.update('username')}
+                onChange={this.update("username")}
                 className="login-input"
-                placeholder="Usernname"
+                placeholder="Username"
               />
             </label>
-          
+
             <label className="loginInputContainer">
-              <input type="password"
+              <input
+                type="password"
                 value={this.state.password}
-                onChange={this.update('password')}
+                onChange={this.update("password")}
                 className="login-input"
                 placeholder="Password"
               />
             </label>
-        
-            <input className="login-submit" type="submit" value={this.props.formType} />
+
+            <input
+              className="login-submit"
+              type="submit"
+              value={this.props.formType}
+            />
           </div>
         </form>
       </div>
