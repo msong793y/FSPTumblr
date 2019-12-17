@@ -197,7 +197,6 @@ class PostFeedItem extends React.Component{
           <div className="FeedItemContent">
             {feeditem}
             <div className="FeedContentBody">{this.props.post.body}</div>
-            <div className="FeedContentHashtags"></div>
             <div className="FeedContentCommentContainer">
               {this.props.post.postComments.map(comment => (
                 <CommentShow comment={comment} key={comment.id} />

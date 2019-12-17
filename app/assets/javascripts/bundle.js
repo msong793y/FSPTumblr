@@ -1141,8 +1141,6 @@ function (_React$Component) {
       }, feeditem, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedContentBody"
       }, this.props.post.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "FeedContentHashtags"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedContentCommentContainer"
       }, this.props.post.postComments.map(function (comment) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_show__WEBPACK_IMPORTED_MODULE_4__["default"], {
