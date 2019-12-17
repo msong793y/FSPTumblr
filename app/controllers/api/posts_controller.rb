@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = Post.all.includes(:comments, :author,:likers,:likes)
+        @posts = Post.where("private = false OR author_id = ?",current_user.id).includes(:comments, :author,:likers,:likes)
         render :index
     end
 
@@ -40,7 +40,7 @@ class Api::PostsController < ApplicationController
     end
 
      def user_post
-        @posts = Post.where("author_id = ?", params[:user_id]).includes(:comments,:author)
+        @posts = Post.where("author_id = ? and private = false or author_id = ? ", params[:user_id], current_user.id).includes(:comments,:author)
         if @posts
             render :index
          else

@@ -11,21 +11,28 @@
     border-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: grey;
+    border-top: 1px solid grey;
     text-align: left;
     
 }
 
 .CommentAuthor{
     position: relative;
+    left:80%;
+    top:25%;
     color:black;
     flex-grow: 1;
+    padding: 3px;
+    font-size: 16px;
 }
 
 .CommentBody{
-    text-align: right;
-    margin-top:3px;
+    text-align: left;
+    margin-top:10px;
+    margin-left:20px;
     color:black;
     flex-grow: 3;
+    font-size: 17px;
 }
 
 

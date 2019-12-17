@@ -816,11 +816,11 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CommentShow"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "CommentAuthor"
-      }, this.props.comment.commentAuthor.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "CommentBody"
-      }, this.props.comment.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      }, this.props.comment.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "CommentAuthor"
+      }, "--", this.props.comment.commentAuthor.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
@@ -1018,6 +1018,18 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      var button1 = null;
+
+      if (this.props.currentUser.id === this.props.post.author_id) {
+        button1 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "/icons8-trash-64.png",
+          className: "FeedGearIcon Clickable",
+          onClick: function onClick() {
+            return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
+          }
+        });
+      }
+
       var likeObj = {};
       likeObj.post_id = this.props.post.id;
       likeObj.liker_id = this.props.currentUser.id;
@@ -1139,13 +1151,7 @@ function (_React$Component) {
         });
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemFooterInfo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/icons8-gear-100.png",
-        className: "FeedGearIcon Clickable",
-        onClick: function onClick() {
-          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPost"])(_this.props.post));
-        }
-      }), button2, button3, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, button1, button2, button3, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-topic-80.png",
         className: "FeedCommentIcon Clickable",
         onClick: function onClick() {
@@ -1838,7 +1844,8 @@ function (_React$Component) {
       hashtags: _this.props.contentType,
       op_name: "",
       contentFile: null,
-      contentUrl: null
+      contentUrl: null,
+      "private": "false"
     };
     return _this;
   }
@@ -1884,11 +1891,13 @@ function (_React$Component) {
       formData.append('post[body]', this.state.body);
       formData.append('post[author_id]', this.state.author_id);
       formData.append('post[hashtags]', this.state.hashtags);
+      formData.append('post[private]', this.state["private"]);
 
       if (this.state.contentFile) {
         formData.append('post[content]', this.state.contentFile);
       }
 
+      console.log(formData);
       $.ajax({
         url: '/api/posts',
         method: 'POST',
@@ -2059,6 +2068,27 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PhotSubmitFormButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "PhotSubmitFormButton",
+        onClick: function onClick() {
+          return _this4.props.closeModal();
+        }
+      }, " ", "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "PrivateRadio"
+      }, "Private:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        value: "false",
+        checked: this.state["private"] === "false",
+        onChange: this.update("private")
+      }), "False")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "radio"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "radio",
+        value: "true",
+        checked: this.state["private"] === "true",
+        onChange: this.update("private")
+      }), "True"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "PhotSubmitFormButton"
       }, "Submit")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ImagePreviewContainer"

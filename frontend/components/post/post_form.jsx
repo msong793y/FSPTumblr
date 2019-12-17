@@ -15,7 +15,8 @@ export default class Form extends React.Component {
       hashtags: this.props.contentType,
       op_name: "",
       contentFile: null,
-      contentUrl: null
+      contentUrl: null,
+      private: "false"
     };
   }
 
@@ -48,10 +49,12 @@ export default class Form extends React.Component {
     formData.append('post[body]', this.state.body);
     formData.append('post[author_id]', this.state.author_id);
     formData.append('post[hashtags]', this.state.hashtags);
+    formData.append('post[private]',this.state.private);
     if (this.state.contentFile) {
 
       formData.append('post[content]', this.state.contentFile);
     }
+    console.log(formData)
     $.ajax({
       url: '/api/posts',
       method: 'POST',
@@ -235,6 +238,38 @@ export default class Form extends React.Component {
             </div>
 
             <div className="PhotSubmitFormButtonContainer">
+              <button
+                className="PhotSubmitFormButton"
+                onClick={() => this.props.closeModal()}
+              >
+                {" "}
+                Cancel
+              </button>
+              <div className="PrivateRadio">
+                Private:
+                <div className="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      value="false"
+                      checked={this.state.private === "false"}
+                      onChange={this.update("private")}
+                    />
+                    False
+                  </label>
+                </div>
+                <div className="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      value="true"
+                      checked={this.state.private === "true"}
+                      onChange={this.update("private")}
+                    />
+                    True
+                  </label>
+                </div>
+              </div>
               <button className="PhotSubmitFormButton">Submit</button>
             </div>
           </form>

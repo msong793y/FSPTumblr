@@ -48,6 +48,20 @@ class PostFeedItem extends React.Component{
 
 
     render(){
+        let button1 = null;
+
+        if(this.props.currentUser.id=== this.props.post.author_id){
+            button1 = (
+              <img
+                src="/icons8-trash-64.png"
+                className="FeedGearIcon Clickable"
+                onClick={() => dispatch(destroyPost(this.props.post))}
+              />
+            );
+            
+        }
+
+
         const likeObj = {};
         likeObj.post_id = this.props.post.id
         likeObj.liker_id = this.props.currentUser.id
@@ -191,11 +205,7 @@ class PostFeedItem extends React.Component{
             </div>
           </div>
           <div className="FeedItemFooterInfo">
-            <img
-              src="/icons8-gear-100.png"
-              className="FeedGearIcon Clickable"
-              onClick={() => dispatch(destroyPost(this.props.post))}
-            />
+            {button1}
             {button2}
             {button3}
             <img
