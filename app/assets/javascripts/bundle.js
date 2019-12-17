@@ -1904,7 +1904,7 @@ function (_React$Component) {
         contentType: false,
         processData: false
       }).then(this.props.fetchPosts()).then(this.props.closeModal());
-      setTimeout(this.props.fetchPosts, 500);
+      setTimeout(this.props.fetchPosts(), 500);
     }
   }, {
     key: "render",
