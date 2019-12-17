@@ -10,6 +10,8 @@ const getAllPosts = (posts)=>({
     posts
 })
 
+
+
 export const receiveSessionErrors= (errors) => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
@@ -20,6 +22,11 @@ export const fetchPosts = ( )=>(dispatch)=>(
     APIUtil.fetchAllPosts().then(posts=>(dispatch(getAllPosts(posts))))
 
 )
+
+// export const fetchSomePosts = (id)=>(dispatch) =>
+//          APIUtil.fetchSomePosts(id).then(posts =>
+//            dispatch(getAllPosts(posts))
+//          );
 
 export const newPost = (post) => (dispatch)=>(
     APIUtil.createPost(post).then(posts=> (dispatch(getAllPosts(posts)

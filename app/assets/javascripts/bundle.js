@@ -160,7 +160,11 @@ var fetchPosts = function fetchPosts() {
       return dispatch(getAllPosts(posts));
     });
   };
-};
+}; // export const fetchSomePosts = (id)=>(dispatch) =>
+//          APIUtil.fetchSomePosts(id).then(posts =>
+//            dispatch(getAllPosts(posts))
+//          );
+
 var newPost = function newPost(post) {
   return function (dispatch) {
     return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["createPost"](post).then(function (posts) {
@@ -3273,13 +3277,12 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchAllPosts, fetchSomePosts, createPost, deletePost, createComment, createLike, deleteLike, createFollow, deleteFollow */
+/*! exports provided: fetchAllPosts, createPost, deletePost, createComment, createLike, deleteLike, createFollow, deleteFollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAllPosts", function() { return fetchAllPosts; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSomePosts", function() { return fetchSomePosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
@@ -3299,14 +3302,14 @@ var fetchAllPosts = function fetchAllPosts() {
     method: "GET",
     url: "/api/posts"
   });
-};
-var fetchSomePosts = id = $.ajax({
-  method: "GET",
-  url: "/api/post/",
-  data: {
-    id: id
-  }
-});
+}; // export const fetchSomePosts = (id)=(
+//     $.ajax({
+//         method: "GET",
+//         url:`/api/post/`,
+//         data:{id}
+//     })
+// )
+
 var createPost = function createPost(post) {
   return $.ajax({
     method: "POST",
