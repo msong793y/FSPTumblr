@@ -2,6 +2,7 @@
 import React, { useCallback } from "react";
 import AudioPlayer from "react-h5-audio-player";
 import Dropzone from "react-dropzone";
+import { getAllPosts, GET_ALL_POSTS} from "../../actions/post_actions"
 
 
 
@@ -61,9 +62,9 @@ export default class Form extends React.Component {
       contentType: false,
       processData: false
     })
-      .then(this.props.fetchPosts())
+      .then(posts => (dispatch(getAllPosts(posts))))
       .then(this.props.closeModal())
-    setTimeout(this.props.fetchPosts(), 500)
+    // setTimeout(this.props.fetchPosts(), 500)
   }
 
   render() {

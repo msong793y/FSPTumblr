@@ -5,7 +5,7 @@ import * as APIUtil from '../util/post_api_util';
 export const GET_ALL_POSTS = "GET_ALL_POSTS"
 
 
-const getAllPosts = (posts)=>({
+export const getAllPosts = (posts)=>({
     type: GET_ALL_POSTS,
     posts
 })
