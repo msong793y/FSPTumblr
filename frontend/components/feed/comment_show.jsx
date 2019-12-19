@@ -12,7 +12,7 @@ class PostFeedItem extends React.Component{
 
         return (
           <div className="CommentShow">
-            <h4 className="CommentBody">{this.props.comment.body}</h4>
+            <p className="CommentBody">{this.props.comment.body}</p>
             <h5 className="CommentAuthor">
               
               --{this.props.comment.commentAuthor.username}
