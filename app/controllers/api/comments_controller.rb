@@ -28,12 +28,12 @@ class Api::CommentsController < ApplicationController
     # end
 
     def destroy
-        comment = current_user.comments.find_by(id: params[:id])
+        comment = Comment.find_by(id: params[:id])
         if comment
             comment.destroy
            
         else
-            render json: ["you can't delete post that aren't yours"], status: 401
+            render json: ["you can't delete blah that aren't yours"], status: 401
         end
     end
 

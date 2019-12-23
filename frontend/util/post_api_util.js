@@ -57,6 +57,16 @@ export const createComment =( comment) =>{
     )
 }
 
+export const deleteComment = comment_id =>{
+    return (
+        $.ajax({
+            method: "delete",
+            url: `/api/comments/${comment_id}`
+        })
+    )
+
+}
+
 
 export const createLike = (likeObj) => {
     return (

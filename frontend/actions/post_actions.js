@@ -35,7 +35,9 @@ export const newPost = (post) => (dispatch)=>(
 export const destroyPost=(post)=>(dispatch)=>{
     return( APIUtil.deletePost(post).then(posts=> (dispatch(getAllPosts(posts)))))
 }
-   
+export const destroyComment=(comment_id)=>()=>{
+    return(APIUtil.deleteComment(comment_id))
+} 
 
 export const createComment = (comment)=>()=>{
     return ( APIUtil.createComment(comment))
