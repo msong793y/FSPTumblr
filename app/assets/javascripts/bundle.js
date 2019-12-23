@@ -120,7 +120,7 @@ var closeModal = function closeModal() {
 /*!******************************************!*\
   !*** ./frontend/actions/post_actions.js ***!
   \******************************************/
-/*! exports provided: GET_ALL_POSTS, getAllPosts, receiveSessionErrors, fetchPosts, fetchSomePosts, newPost, destroyPost, createComment, createLike, deleteLike, RECEIVE_CURRENT_USER, receiveCurrentUser, createFollow, deleteFollow */
+/*! exports provided: GET_ALL_POSTS, getAllPosts, receiveSessionErrors, fetchPosts, fetchSomePosts, newPost, destroyPost, destroyComment, createComment, createLike, deleteLike, RECEIVE_CURRENT_USER, receiveCurrentUser, createFollow, deleteFollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -132,6 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSomePosts", function() { return fetchSomePosts; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newPost", function() { return newPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPost", function() { return destroyPost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyComment", function() { return destroyComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLike", function() { return createLike; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteLike", function() { return deleteLike; });
@@ -180,6 +181,11 @@ var destroyPost = function destroyPost(post) {
     return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deletePost"](post).then(function (posts) {
       return dispatch(getAllPosts(posts));
     });
+  };
+};
+var destroyComment = function destroyComment(comment_id) {
+  return function () {
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](comment_id);
   };
 };
 var createComment = function createComment(comment) {
@@ -779,6 +785,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -799,6 +806,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var PostFeedItem =
 /*#__PURE__*/
 function (_React$Component) {
@@ -813,13 +821,20 @@ function (_React$Component) {
   _createClass(PostFeedItem, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CommentShow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "CommentBody"
       }, this.props.comment.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "CommentAuthor"
-      }, "--", this.props.comment.commentAuthor.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "CommentDelete",
+        onClick: function onClick() {
+          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["destroyComment"])(_this.props.comment.id));
+        }
+      }, " Delete"), "--", this.props.comment.commentAuthor.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
@@ -3336,7 +3351,7 @@ var configureStore = function configureStore() {
 /*!****************************************!*\
   !*** ./frontend/util/post_api_util.js ***!
   \****************************************/
-/*! exports provided: fetchAllPosts, fetchSomePosts, createPost, deletePost, createComment, createLike, deleteLike, createFollow, deleteFollow */
+/*! exports provided: fetchAllPosts, fetchSomePosts, createPost, deletePost, createComment, deleteComment, createLike, deleteLike, createFollow, deleteFollow */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3346,6 +3361,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPost", function() { return createPost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deletePost", function() { return deletePost; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createLike", function() { return createLike; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteLike", function() { return deleteLike; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createFollow", function() { return createFollow; });
@@ -3396,6 +3412,12 @@ var createComment = function createComment(comment) {
     data: {
       comment: comment
     }
+  });
+};
+var deleteComment = function deleteComment(comment_id) {
+  return $.ajax({
+    method: "delete",
+    url: "/api/comments/".concat(comment_id)
   });
 };
 var createLike = function createLike(likeObj) {
