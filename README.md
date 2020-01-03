@@ -25,11 +25,10 @@ Dumblr is built primarily with the following technologies:
 * Heroku
 
 ## Features
-* Dynamically rendered landing page.
-* Users must register/login to interact with the main content.
+* Secure frontend to backend user authentication using BCrypt
 * Status dependent navigation bar.
 * Users are able to post various media content type.
-* Visually Elegant Modal windows used for upload.
+* Visually elegant Modal windows used for upload.
 * Users can upload private contents only visible to owner.
 * Users can like individual posts.
 * Users can follow other users and filter feed based on selection.
@@ -38,16 +37,17 @@ Dumblr is built primarily with the following technologies:
 ## Screenshots
 
 Landing page:
-
+![](landing.png)
 
 Content Feed:
+![](feed.png)
 
 
 Posting Modal:
-
+![](modal.png)
 
 Content Posting:
-
+![](post.png)
 
 
 ## Code Snippets:
