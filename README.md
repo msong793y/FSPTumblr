@@ -56,12 +56,15 @@ Content Posting:
 
 ```javascript
 
+     return(
+
       <div className="MAIN">
       <Modal />
       <header className="main-header">
         <NavbarContainer />
       </header>
       <div className= {`${setting}`} style= {backgroundImage} >
+          {/* <Link to= "/signup" >Sign Up</Link> */}
           <Switch>
             <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
             <ProtectedRoute path  ="/logout" component={LogoutContainer}/>
@@ -77,6 +80,8 @@ Content Posting:
        </footer>
       
     </div>
+
+    );
 
 
 ```
@@ -134,7 +139,7 @@ Content posting submission:
     if (this.state.contentFile) {
       formData.append('post[content]', this.state.contentFile);
     }
-    
+
     $.ajax({
       url: '/api/posts',
       method: 'POST',
