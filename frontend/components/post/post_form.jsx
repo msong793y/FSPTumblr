@@ -64,7 +64,6 @@ export default class Form extends React.Component {
     })
       .then(posts => (dispatch(getAllPosts(posts))))
       .then(this.props.closeModal())
-    // setTimeout(this.props.fetchPosts(), 500)
   }
 
   render() {

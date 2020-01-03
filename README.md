@@ -52,6 +52,106 @@ Content Posting:
 
 ## Code Snippets:
 
+* React Dom Router Setup:
+
+```javascript
+
+      <div className="MAIN">
+      <Modal />
+      <header className="main-header">
+        <NavbarContainer />
+      </header>
+      <div className= {`${setting}`} style= {backgroundImage} >
+          <Switch>
+            <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
+            <ProtectedRoute path  ="/logout" component={LogoutContainer}/>
+            <AuthRoute exact path="/login" component={LogInFormContainer} />
+            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <AuthRoute  path="/" component ={SplashContainer}/>
+          </Switch>
+       </div>
+      
+
+       <footer className="main-footer">
+     
+       </footer>
+      
+    </div>
+
+
+```
+
+* Universial Modal Implementation:
+
+```javascript
+
+    function Modal({ modal, content, closeModal }) {
+
+        if (!modal) {
+            return null;
+        }
+        let component;
+        switch (modal) {
+
+            case 'createPost':
+            component = <CreatePostContainer contentType={content} />;
+            break;
+            case 'postingModal':
+            component = <PostingModalContainer />;
+            break;
+            case 'showContent':
+            component = <ShowContent content={content} />
+            break;
+            case 'postComment':
+            component = <CommentPostContainer content={content} />
+            break;
+        
+            default:
+            return null;
+        }
+        return (
+            <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+            </div>
+        );
+    }
+```
+
+Content posting submission:
+
+```javascript
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('post[body]', this.state.body);
+    formData.append('post[author_id]', this.state.author_id);
+    formData.append('post[hashtags]', this.state.hashtags);
+    formData.append('post[private]',this.state.private);
+
+    if (this.state.contentFile) {
+      formData.append('post[content]', this.state.contentFile);
+    }
+    
+    $.ajax({
+      url: '/api/posts',
+      method: 'POST',
+      data: formData,
+      contentType: false,
+      processData: false
+    })
+      .then(posts => (dispatch(getAllPosts(posts))))
+      .then(this.props.closeModal())
+  }
+
+
+```
+
+
+
+
 
 
 

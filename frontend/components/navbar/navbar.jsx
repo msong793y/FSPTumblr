@@ -133,7 +133,6 @@ class Navbar extends React.Component {
                 onMouseEnter={() => this.setState({ menuDrop: "" })}
               >
                 {button2}
-                {/* {dropDownMenu} */}
               </div>
               <div className="LightingButtonContainer Clickable">{button3}</div>
               <div className="HomeButtonCotainer Clickable">{button4}</div>

@@ -28,9 +28,7 @@ function Modal({ modal, content, closeModal }) {
     case 'postComment':
       component = <CommentPostContainer content={content} />
       break;
-    // case 'signup':
-    //   component = <SignupFormContainer />;
-    //   break;
+  
     default:
       return null;
   }
