@@ -64,7 +64,7 @@ Content Posting:
         <NavbarContainer />
       </header>
       <div className= {`${setting}`} style= {backgroundImage} >
-          {/* <Link to= "/signup" >Sign Up</Link> */}
+         
           <Switch>
             <ProtectedRoute path ="/dashboard" component={DashboardContainer}/>
             <ProtectedRoute path  ="/logout" component={LogoutContainer}/>
