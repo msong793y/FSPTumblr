@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.updateLocation=updateLocation
-  window.fetchPosts=fetchPosts;
+  // window.updateLocation=updateLocation
+  // window.fetchPosts=fetchPosts;
 
   ReactDOM.render(<Root store={store}/>, rootEl);
 }); 

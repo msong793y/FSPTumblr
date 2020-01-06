@@ -1470,9 +1470,6 @@ function Modal(_ref) {
         content: content
       });
       break;
-    // case 'signup':
-    //   component = <SignupFormContainer />;
-    //   break;
 
     default:
       return null;
@@ -1919,7 +1916,7 @@ function (_React$Component) {
         processData: false
       }).then(function (posts) {
         return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["getAllPosts"])(posts));
-      }).then(this.props.closeModal()); // setTimeout(this.props.fetchPosts(), 500)
+      }).then(this.props.closeModal());
     }
   }, {
     key: "render",
@@ -2821,7 +2818,7 @@ function (_React$Component) {
         value: this.state.username,
         onChange: this.update('username'),
         className: "signup-login",
-        placeholder: "Usernname"
+        placeholder: "Username"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
@@ -3014,10 +3011,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./actions/post_actions */ "./frontend/actions/post_actions.js");
-
-
 
 
 
@@ -3026,9 +3019,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var rootEl = document.getElementById('root');
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])();
   window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.updateLocation = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["updateLocation"];
-  window.fetchPosts = _actions_post_actions__WEBPACK_IMPORTED_MODULE_5__["fetchPosts"];
+  window.dispatch = store.dispatch; // window.updateLocation=updateLocation
+  // window.fetchPosts=fetchPosts;
+
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
   }), rootEl);
@@ -37800,7 +37793,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
