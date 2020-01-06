@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const rootEl = document.getElementById('root');
   let store = configureStore()
   
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-  // window.updateLocation=updateLocation
-  // window.fetchPosts=fetchPosts;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.updateLocation=updateLocation
+  window.fetchPosts=fetchPosts;
 
   ReactDOM.render(<Root store={store}/>, rootEl);
 }); 
