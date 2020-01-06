@@ -26,12 +26,12 @@ Dumblr is built primarily with the following technologies:
 
 ## Features
 * Secure frontend to backend user authentication using BCrypt
-* Status dependent navigation bar.
+* Users navigation bar changes dependent on login status
 * Users are able to post various media content type.
-* Visually elegant Modal windows used for upload.
 * Users can upload private contents only visible to owner.
 * Users can like individual posts.
 * Users can follow other users and filter feed based on selection.
+* Users can comment on posts.
 
 
 ## Screenshots
