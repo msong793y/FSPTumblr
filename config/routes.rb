@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'static_root#static_pages'
 
-  # resources :posts, only: [:show]
 
   namespace :api, defaults: {format: :json} do
     delete '/likes/1', to: 'likes#destroy'
