@@ -24,7 +24,7 @@ Dumblr is built primarily with the following technologies:
 * CSS
 * Heroku
 
-## Features
+## Feature
 * Secure frontend to backend user authentication using BCrypt
 * Users navigation bar changes dependent on login status
 * Users are able to post various media content type.
