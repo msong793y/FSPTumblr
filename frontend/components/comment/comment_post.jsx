@@ -42,9 +42,7 @@ class CommentForm extends React.Component {
 //   }
 
   
-//   componentWillUnmount(){
-//     this.props.clearErrors();
-//   }
+
 
   render() {
     
