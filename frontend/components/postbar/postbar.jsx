@@ -18,14 +18,14 @@ class PostBar extends React.Component {
               <div className="PostBarProfilePic " onClick={()=>this.props.fetchPosts()}>
                 <img
                   src="/default_profile_pic.png"
-                  className="TextButton"
+                  className="TextButton TopButton"
                 ></img>
               </div>
               <div className="PostBarIcons ">
                 <div className="TextButtonContainer">
                   <img
                     src="/icons8-font-size-80.png"
-                    className="TextButton"
+                    className="TextButton TopButton"
                     onClick={() =>
                       this.props.activateModal("createPost", "text")
                     }
@@ -34,7 +34,7 @@ class PostBar extends React.Component {
                 <div className="PhotoButtonContainer">
                   <img
                     src="/icons8-slr-camera-64.png"
-                    className="PhotoButton"
+                    className="PhotoButton TopButton"
                     onClick={() =>
                       this.props.activateModal("createPost", "photo")
                     }
@@ -43,7 +43,7 @@ class PostBar extends React.Component {
                 <div className="QuoteButtonContainer">
                   <img
                     src="/quote-orange.png"
-                    className="QuoteButton"
+                    className="QuoteButton TopButton"
                     onClick={() =>
                       this.props.activateModal("createPost", "quote")
                     }
@@ -52,7 +52,7 @@ class PostBar extends React.Component {
                 <div className="LinkButtonContainer">
                   <img
                     src="/link-green.png"
-                    className="LinkButton"
+                    className="LinkButton TopButton"
                     onClick={() =>
                       this.props.activateModal("createPost", "link")
                     }
@@ -61,7 +61,7 @@ class PostBar extends React.Component {
                 <div className="AudioButtonContainer">
                   <img
                     src="/audio-purple.png"
-                    className="AudioButton"
+                    className="AudioButton TopButton"
                     onClick={() =>
                       this.props.activateModal("createPost", "audio")
                     }
@@ -70,7 +70,7 @@ class PostBar extends React.Component {
                 <div className="VideoButtonContainer">
                   <img
                     src="/video-pink-64.png"
-                    className="VideoButton"
+                    className="VideoButton TopButton"
                     onClick={() =>
                       this.props.activateModal("createPost", "video")
                     }

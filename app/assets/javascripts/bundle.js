@@ -2179,14 +2179,14 @@ function (_React$Component) {
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/default_profile_pic.png",
-        className: "TextButton"
+        className: "TextButton TopButton"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "PostBarIcons "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "TextButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-font-size-80.png",
-        className: "TextButton",
+        className: "TextButton TopButton",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", "text");
         }
@@ -2194,7 +2194,7 @@ function (_React$Component) {
         className: "PhotoButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-slr-camera-64.png",
-        className: "PhotoButton",
+        className: "PhotoButton TopButton",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", "photo");
         }
@@ -2202,7 +2202,7 @@ function (_React$Component) {
         className: "QuoteButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/quote-orange.png",
-        className: "QuoteButton",
+        className: "QuoteButton TopButton",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", "quote");
         }
@@ -2210,7 +2210,7 @@ function (_React$Component) {
         className: "LinkButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/link-green.png",
-        className: "LinkButton",
+        className: "LinkButton TopButton",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", "link");
         }
@@ -2218,7 +2218,7 @@ function (_React$Component) {
         className: "AudioButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/audio-purple.png",
-        className: "AudioButton",
+        className: "AudioButton TopButton",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", "audio");
         }
@@ -2226,7 +2226,7 @@ function (_React$Component) {
         className: "VideoButtonContainer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/video-pink-64.png",
-        className: "VideoButton",
+        className: "VideoButton TopButton",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", "video");
         }
