@@ -15,7 +15,7 @@ class Splash extends React.Component {
             <div>
                 <div className="SplashMainPage">
                     <div className="MainSplashWords">
-                        <h1 className="SplashTitle">Dumblr</h1>
+                        <h1 className="SplashTitle">Skyscraper</h1>
                         <h3 className="SplashTagLine">Dawn + Dusk  //  Cities + Light</h3>
                     </div>
                     <div className="SplashLinkCT">

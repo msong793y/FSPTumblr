@@ -1677,13 +1677,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "logo",
         to: "/"
-      }, "D")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "SearchBar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "SearchBarText",
-        type: "text",
-        placeholder: ""
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "S"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "RightNav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "TopRightButtonContainer Clickable"
@@ -2949,7 +2943,7 @@ function (_React$Component) {
         className: "MainSplashWords"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "SplashTitle"
-      }, "Dumblr"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+      }, "Skyscraper"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "SplashTagLine"
       }, "Dawn + Dusk  //  Cities + Light")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "SplashLinkCT"

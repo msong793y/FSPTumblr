@@ -111,16 +111,16 @@ class Navbar extends React.Component {
             <div className="LeftNav">
               <div className="MainIcon">
                 <Link className="logo" to="/">
-                  D
+                  S
                 </Link>
               </div>
-              <div className="SearchBar">
+              {/* <div className="SearchBar">
                 <input
                   className="SearchBarText"
                   type="text"
                   placeholder=""
                 ></input>
-              </div>
+              </div> */}
             </div>
             <div className="RightNav">
               <div className="TopRightButtonContainer Clickable">
