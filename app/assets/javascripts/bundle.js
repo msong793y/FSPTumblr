@@ -185,7 +185,11 @@ var destroyPost = function destroyPost(post) {
 };
 var destroyComment = function destroyComment(comment_id) {
   return function () {
-    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](comment_id);
+    return _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](comment_id).then(function () {
+      _util_post_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllPosts"]().then(function (posts) {
+        return dispatch(getAllPosts(posts));
+      });
+    });
   };
 };
 var createComment = function createComment(comment) {
@@ -581,9 +585,6 @@ function (_React$Component) {
     //       </ul>
     //     );
     //   }
-    //   componentWillUnmount(){
-    //     this.props.clearErrors();
-    //   }
 
   }, {
     key: "render",
@@ -823,18 +824,27 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
+      var button1 = null;
+
+      if (this.props.currentUserId === this.props.comment.commentAuthor.id) {
+        button1 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "/deleteComment.png",
+          className: " Clickable CommentDelete",
+          onClick: function onClick() {
+            return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["destroyComment"])(_this.props.comment.id));
+          }
+        });
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "CommentShow"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "CommentBody"
-      }, this.props.comment.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "CommentAuthor"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "CommentDelete",
-        onClick: function onClick() {
-          return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_1__["destroyComment"])(_this.props.comment.id));
-        }
-      }, " Delete"), "--", this.props.comment.commentAuthor.username), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
+        className: "CommentTop"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "CommentAuthor"
+      }, this.props.comment.commentAuthor.username), button1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "CommentBody"
+      }, this.props.comment.body), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
@@ -1159,7 +1169,8 @@ function (_React$Component) {
       }, this.props.post.postComments.map(function (comment) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_show__WEBPACK_IMPORTED_MODULE_4__["default"], {
           comment: comment,
-          key: comment.id
+          key: comment.id,
+          currentUserId: _this.props.currentUser.id
         });
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "FeedItemFooterInfo"
@@ -1603,7 +1614,8 @@ function (_React$Component) {
         src: "/icons8-linkedin-64.png"
       }));
       var button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "mailto:miles.song.ca@gmail.com"
+        href: "mailto:miles.song.ca@gmail.com",
+        target: "_blank"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-email-64.png"
       }));
@@ -37793,7 +37805,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

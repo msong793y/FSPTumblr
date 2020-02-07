@@ -10,16 +10,29 @@ class PostFeedItem extends React.Component{
     }
 
     render(){
+      let button1 = null;
+
+
+      if (this.props.currentUserId === this.props.comment.commentAuthor.id) {
+        button1 = (
+          <img
+            src="/deleteComment.png"
+            className=" Clickable CommentDelete"
+            onClick={() => dispatch(destroyComment(this.props.comment.id))}
+          />
+        );
+
+      }
 
         return (
           <div className="CommentShow">
-            <p className="CommentBody">{this.props.comment.body}</p>
-            <h5 className="CommentAuthor">
-              <div className="CommentDelete"
-                onClick={() => dispatch(destroyComment(this.props.comment.id))}
-              > Delete</div>
-              --{this.props.comment.commentAuthor.username}
-            </h5>
+            <div className="CommentTop">
+                <div className="CommentAuthor">
+                  {this.props.comment.commentAuthor.username}
+                </div>
+               {button1}
+            </div>
+            <div className="CommentBody">{this.props.comment.body}</div>
             <br></br>
           </div>
         );

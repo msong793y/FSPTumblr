@@ -57,11 +57,14 @@
     width: 540px;
     height: auto;
     color: black;
-
+    border-bottom-width: 1px;
+    border-bottom-color: lightgrey;
+    border-style: solid;
 }
 
+
+
 .FeedItemContent>*{
-    width: 540px;
     height: auto;
     color: black;
 }
@@ -106,12 +109,16 @@
 
 .FeedContentBody{
 
-    display: inline;
-    size:20px;
-    line-height:1.2;
-    margin-left:10px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
     margin-right:10px;
-    text-align: justify;
+    padding: 0;
+    color: black;
+    font-family: Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 21px;
 }
 
 .FeedItemFooterInfo{
