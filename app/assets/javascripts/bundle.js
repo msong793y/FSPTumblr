@@ -1606,20 +1606,26 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-github-64.png"
       }));
-      var button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      var button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/miles-song/",
         target: "_blank"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "LinkedINButtonImg",
         src: "/icons8-linkedin-64.png"
       }));
-      var button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      var button4 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "mailto:miles.song.ca@gmail.com",
         target: "_blank"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-email-64.png"
       }));
-      var button4 = '';
+      var button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://angel.co/miles-song",
+        target: "_blank"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/angellist.png"
+      }));
+      ;
       logoutBotton = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "TRBActual",
         to: pathWay
@@ -37799,7 +37805,7 @@ function warning(message) {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

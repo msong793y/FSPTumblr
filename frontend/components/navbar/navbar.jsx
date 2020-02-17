@@ -59,13 +59,13 @@ class Navbar extends React.Component {
 
         }
         let button1 = <a href="https://github.com/msong793y" target="_blank" ><img src="/icons8-github-64.png"></img></a>;
-        let button2 = <a href="https://www.linkedin.com/in/miles-song/" target="_blank" ><img className="LinkedINButtonImg" src="/icons8-linkedin-64.png"></img></a>;
-        let button3 = (
+        let button3 = <a href="https://www.linkedin.com/in/miles-song/" target="_blank" ><img className="LinkedINButtonImg" src="/icons8-linkedin-64.png"></img></a>;
+        let button4 = (
           <a href="mailto:miles.song.ca@gmail.com" target="_blank" >
                 <img src="/icons8-email-64.png"></img>
             </a>
         );
-        let button4 = '';
+          let button2 = <a href="https://angel.co/miles-song" target="_blank" ><img src="/angellist.png"></img></a>;;
         logoutBotton = <Link className="TRBActual" to={pathWay}  >{buttonDisplay}</Link>
 
         let dropDownMenu = null;
