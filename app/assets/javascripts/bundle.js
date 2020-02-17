@@ -1312,7 +1312,12 @@ function Following(props) {
     onClick: function onClick() {
       return props.fetchPosts();
     }
-  }, "Show All Posts")));
+  }, "Show All Posts")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "Following-Item ShowAllPost Clickable PostBar",
+    onClick: function onClick() {
+      return props.activateModal("postingModal", null);
+    }
+  }, "Create Post"));
 }
 
 /***/ }),
@@ -1328,7 +1333,9 @@ function Following(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _following_bar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./following_bar */ "./frontend/components/followingBar/following_bar.jsx");
-/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var _actions_post_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/post_actions */ "./frontend/actions/post_actions.js");
+
 
 
 
@@ -1342,13 +1349,16 @@ var mapStateToProp = function mapStateToProp(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     deleteFollow: function deleteFollow(follow) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["deleteFollow"])(follow));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["deleteFollow"])(follow));
     },
     fetchSomePosts: function fetchSomePosts(user_id) {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSomePosts"])(user_id));
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["fetchSomePosts"])(user_id));
     },
     fetchPosts: function fetchPosts() {
-      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPosts"])());
+      return dispatch(Object(_actions_post_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPosts"])());
+    },
+    activateModal: function activateModal(action, id) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(action, id));
     }
   };
 };
@@ -1633,24 +1643,24 @@ function (_React$Component) {
       var dropDownMenu = null;
 
       if (location === "/dashboard") {
-        button1 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "/icons8-compose-64.png",
-          onClick: function onClick() {
-            return _this2.props.activateModal("postingModal", null);
-          }
-        });
+        button1 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://github.com/msong793y",
+          target: "_blank"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "/icons8-github-64.png"
+        }));
         button2 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "https://angel.co/miles-song",
+          target: "_blank"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: "/angellist.png"
+        }));
+        button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "https://www.linkedin.com/in/miles-song/",
           target: "_blank"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "LinkedINButtonImg",
           src: "/icons8-linkedin-64.png"
-        }));
-        button3 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-          href: "https://github.com/msong793y",
-          target: "_blank"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: "/icons8-github-64.png"
         }));
         button4 = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: "mailto:miles.song.ca@gmail.com"
@@ -2341,15 +2351,15 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "ModalPostBarIcons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ModalextButtonContainer"
+        className: "ModalextButtonContainer Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/icons8-font-size-80.png",
-        className: "ModalTextButton",
+        className: "ModalTextButton Clickable",
         onClick: function onClick() {
           return _this.props.activateModal("createPost", null);
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ModalPhotoButtonContainer"
+        className: "ModalPhotoButtonContainer Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/CameraBlue.png",
         className: "ModalPhotoButton",
@@ -2357,7 +2367,7 @@ function (_React$Component) {
           return _this.props.activateModal("createPost", null);
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ModalQuoteButtonContainer"
+        className: "ModalQuoteButtonContainer Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/quote-blue.png",
         className: "ModalQuoteButton",
@@ -2365,7 +2375,7 @@ function (_React$Component) {
           return _this.props.activateModal("createPost", null);
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ModalLinkButtonContainer"
+        className: "ModalLinkButtonContainer Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/link-blue.png",
         className: "ModalLinkButton",
@@ -2373,7 +2383,7 @@ function (_React$Component) {
           return _this.props.activateModal("createPost", null);
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ModalAudioButtonContainer"
+        className: "ModalAudioButtonContainer Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/audio-blue.png",
         className: "ModalAudioButton",
@@ -2381,7 +2391,7 @@ function (_React$Component) {
           return _this.props.activateModal("createPost", null);
         }
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ModalVideoButtonContainer"
+        className: "ModalVideoButtonContainer Clickable"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "/video-blue.png",
         className: "ModalVideoButton",

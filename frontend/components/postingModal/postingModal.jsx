@@ -16,28 +16,28 @@ class PostingModal extends React.Component {
             <div>
                 
                     <div className="ModalPostBarIcons">
-                        <div className="ModalextButtonContainer">
-                            <img src="/icons8-font-size-80.png" className= "ModalTextButton"
+                    <div className="ModalextButtonContainer Clickable">
+                        <img src="/icons8-font-size-80.png" className= "ModalTextButton Clickable"
                              onClick={ ()=>this.props.activateModal("createPost",null)}></img>
                         </div>
-                        <div className="ModalPhotoButtonContainer">
+                    <div className="ModalPhotoButtonContainer Clickable">
                             <img src="/CameraBlue.png" 
                             className= "ModalPhotoButton"
                             onClick={ ()=>this.props.activateModal("createPost",null)}></img>
                         </div>
-                        <div className="ModalQuoteButtonContainer">
+                    <div className="ModalQuoteButtonContainer Clickable">
                             <img src="/quote-blue.png" className= "ModalQuoteButton"
                              onClick={ ()=>this.props.activateModal("createPost",null)}></img>
                         </div>
-                        <div className="ModalLinkButtonContainer">
+                    <div className="ModalLinkButtonContainer Clickable">
                             <img src="/link-blue.png" className= "ModalLinkButton"
                              onClick={ ()=>this.props.activateModal("createPost",null)}></img>
                         </div>
-                        <div className="ModalAudioButtonContainer">
+                    <div className="ModalAudioButtonContainer Clickable">
                             <img src="/audio-blue.png" className= "ModalAudioButton"
                              onClick={ ()=>this.props.activateModal("createPost",null)}></img>
                         </div>
-                        <div className="ModalVideoButtonContainer">
+                    <div className="ModalVideoButtonContainer Clickable">
                             <img src="/video-blue.png" className= "ModalVideoButton"
                              onClick={ ()=>this.props.activateModal("createPost",null)}></img>
                         </div>

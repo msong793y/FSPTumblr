@@ -43,6 +43,11 @@ export default function Following(props){
             Show All Posts
           </div>
         </div>
+        <div className="Following-Item ShowAllPost Clickable PostBar"
+          onClick={() => props.activateModal("postingModal", null)}
+          >
+            Create Post
+        </div>
       </div>
     );
 
