@@ -6,7 +6,7 @@ export default function Following(props){
       Object.values(props.currentUser.followings)
     
 
-
+//
 
     return (
       <div className="Following-Container">
