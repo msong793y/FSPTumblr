@@ -65,6 +65,7 @@ class App extends React.Component {
             <ProtectedRoute path  ="/logout" component={LogoutContainer}/>
             <AuthRoute exact path="/login" component={LogInFormContainer} />
             <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+            <AuthRoute exact path="/DOGGIE FOODIE" component={SignUpFormContainer} />
             <AuthRoute  path="/" component ={SplashContainer}/>
           </Switch>
        </div>
